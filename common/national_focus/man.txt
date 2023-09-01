@@ -1,0 +1,2561 @@
+focus_tree = {
+	id = man
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MAN
+		}
+	}
+	#Реформы в стране
+	focus = {
+		id = MAN_reformyvstrane
+		icon = GFX_MAN_reformyvstrane-426
+		x = 34
+		y = 15
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_izucheniyatrudovleninaimarksa  }
+	}
+
+	#Увеличить инвестирования от Германии
+	focus = {
+		id = MAN_uvelichitinvestirovaniyaotgermanii
+		icon = GFX_focus_chi_mission_to_germany
+		x = 23
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#План войны с Японией
+	focus = {
+		id = MAN_planvoynysyaponiey
+		icon = GFX_focus_jap_strike_south
+		x = 43
+		y = 18
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_ubratyaponskuyuugrozunakontinente  }
+	}
+
+	#Подготовка к войне с партизанами
+	focus = {
+		id = MAN_podgotovkakvoynespartizanami
+		icon = GFX_focus_prc_infiltration
+		x = 13
+		y = 1
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
+	}
+
+	#Залечь на дно и ожидать приказа
+	focus = {
+		id = MAN_zalechnadnoiozhidatprikaza
+		icon = GFX_goal_tripartite_pact
+		x = 39
+		y = 11
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_obrashcheniepartizanksssr  }
+		mutually_exclusive = { focus = MAN_integrirovatpartizanvarmiyu  }
+	}
+
+	#Строительство нового флота Маньчжоу-го
+	focus = {
+		id = MAN_stroitelstvonovogoflotamanchzhougo
+		icon = GFX_MAN_stroitelstvonovogoflotamanchzhougo-262058
+		x = 1
+		y = 6
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_razrabotkinovyhkorobley  focus = MAN_modernizaciyakorabley  }
+	}
+
+	#Модернизация кораблей
+	focus = {
+		id = MAN_modernizaciyakorabley
+		icon = GFX_MAN_modernizaciyakorabley-404
+		x = 2
+		y = 5
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_CHI_INFLATION
+		}
+		prerequisite = { focus = MAN_podgotovitinfrastrukturudlyavmf  }
+	}
+
+	#Разработки новых короблей
+	focus = {
+		id = MAN_razrabotkinovyhkorobley
+		icon = GFX_goal_generic_amphibious_assault
+		x = 0
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = MAN_novyerazrabotkidlyavmf  }
+	}
+
+	#Подготовить инфраструктуру для ВМФ
+	focus = {
+		id = MAN_podgotovitinfrastrukturudlyavmf
+		icon = GFX_focus_jap_strike_south
+		x = 2
+		y = 3
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo  }
+	}
+
+	#Разработка доктрин воздушной войны
+	focus = {
+		id = MAN_razrabotkadoktrinvozdushnoyvoyny
+		icon = GFX_goal_generic_air_doctrine
+		x = 11
+		y = 7
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = MAN_proizvodstvoistrebiteleyibombardirovshchikov  focus = MAN_stavkanapodderzhkunazemnyhsil  } prerequisite = { focus = MAN_stavkanapodderzhkuvmf  }
+	}
+
+	#Разработка морских доктрин войны
+	focus = {
+		id = MAN_razrabotkamorskihdoktrinvoyny
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 1
+		y = 7
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = MAN_stroitelstvonovogoflotamanchzhougo  }
+	}
+
+	#Строительство авиабаз
+	focus = {
+		id = MAN_stroitelstvoaviabaz
+		icon = GFX_goal_generic_air_production
+		x = 11
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_razrabotkasvoihistrebiteleynaosnoveyaponskih  }
+	}
+
+	#Созыв совета по решению внутренних проблем в стране
+	focus = {
+		id = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane
+		icon = GFX_focus_jap_manchurian_project
+		x = 13
+		y = 0
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	#Вопрос промышленность
+	focus = {
+		id = MAN_voprospromyshlennost
+		icon = GFX_focus_generic_industry_2
+		x = 25
+		y = 1
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
+	}
+
+	#Реорганизация наземных сил
+	focus = {
+		id = MAN_reorganizaciyanazemnyhsil
+		icon = GFX_focus_generic_manpower
+		x = 6
+		y = 2
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_USA_CONGRESS
+		}
+		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
+	}
+
+	#Интеграция Квантунской арми
+	focus = {
+		id = MAN_integraciyakvantunskoyarmi
+		icon = GFX_goal_generic_small_arms
+		x = 4
+		y = 3
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil  }
+		mutually_exclusive = { focus = MAN_multinacionalnayaarmiyamanchzhougo  }
+	}
+
+	#Создание императорской армии
+	focus = {
+		id = MAN_sozdanieimperatorskoyarmii
+		icon = GFX_MAN_sozdanieimperatorskoyarmii-262057
+		x = 6
+		y = 4
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil  }
+	}
+
+	#Мульти национальная армия Маньчжоу-го
+	focus = {
+		id = MAN_multinacionalnayaarmiyamanchzhougo
+		icon = GFX_focus_secret_rearmament
+		x = 8
+		y = 3
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil  }
+	}
+
+	#Вопрос вооружённых сил
+	focus = {
+		id = MAN_voprosvooruzhyonnyhsil
+		icon = GFX_focus_generic_combined_arms
+		x = 6
+		y = 1
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
+	}
+
+	#Новая эра в морском флоте Маньчжоу-го
+	focus = {
+		id = MAN_novayaeravmorskomflotemanchzhougo
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 1
+		y = 2
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
+	}
+
+	#Солнце всё ближе к нам
+	focus = {
+		id = MAN_solncevsyoblizheknam
+		icon = GFX_goal_generic_build_airforce
+		x = 10
+		y = 2
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
+	}
+
+	#Новые разработки для ВМФ
+	focus = {
+		id = MAN_novyerazrabotkidlyavmf
+		icon = GFX_MAN_novyerazrabotkidlyavmf-411
+		x = 0
+		y = 3
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo  }
+	}
+
+	#Всеобщие государственные армейские учения
+	focus = {
+		id = MAN_vseobshchiegosudarstvennyearmeyskieucheniya
+		icon = GFX_focus_generic_little_entente
+		x = 8
+		y = 4
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_multinacionalnayaarmiyamanchzhougo  }
+	}
+
+	#Пригласить армейских специалистов из Японии
+	focus = {
+		id = MAN_priglasitarmeyskihspecialistovizyaponii
+		icon = GFX_focus_generic_military_academy
+		x = 4
+		y = 4
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_integraciyakvantunskoyarmi  }
+	}
+
+	#Собственные армейские стандарты
+	focus = {
+		id = MAN_sobstvennyearmeyskiestandarty
+		icon = GFX_goal_generic_small_arms
+		x = 8
+		y = 5
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = MAN_vseobshchiegosudarstvennyearmeyskieucheniya  }
+	}
+
+	#Подогнать стандартны армии под японские
+	focus = {
+		id = MAN_podognatstandartnyarmiipodyaponskie
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 5
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_priglasitarmeyskihspecialistovizyaponii  }
+	}
+
+	#Щита императора
+	focus = {
+		id = MAN_shchitaimperatora
+		icon = GFX_focus_generic_home_defense
+		x = 6
+		y = 5
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = MAN_sozdanieimperatorskoyarmii  }
+	}
+
+	#Гвардейские дивизии
+	focus = {
+		id = MAN_gvardeyskiedivizii
+		icon = GFX_focus_chi_army_reform
+		x = 6
+		y = 6
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_shchitaimperatora  focus = MAN_podognatstandartnyarmiipodyaponskie  } prerequisite = { focus = MAN_sobstvennyearmeyskiestandarty  }
+	}
+
+	#Разработка своих истребителей на основе японских
+	focus = {
+		id = MAN_razrabotkasvoihistrebiteleynaosnoveyaponskih
+		icon = GFX_focus_research
+		x = 10
+		y = 3
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = MAN_solncevsyoblizheknam  }
+	}
+
+	#Производство истребителей и бомбардировщиков
+	focus = {
+		id = MAN_proizvodstvoistrebiteleyibombardirovshchikov
+		icon = GFX_goal_generic_air_fighter
+		x = 11
+		y = 6
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_stroitelstvoaviabaz  }
+	}
+
+	#Ставка на поддержку наземных сил
+	focus = {
+		id = MAN_stavkanapodderzhkunazemnyhsil
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 10
+		y = 5
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_stroitelstvoaviabaz  }
+	}
+
+	#Ставка на поддержку ВМФ
+	focus = {
+		id = MAN_stavkanapodderzhkuvmf
+		icon = GFX_focus_usa_escort_fighters
+		x = 12
+		y = 5
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_stroitelstvoaviabaz  }
+		mutually_exclusive = { focus = MAN_stavkanapodderzhkunazemnyhsil  }
+	}
+
+	#Разработка армейских доктрин войны
+	focus = {
+		id = MAN_razrabotkaarmeyskihdoktrinvoyny
+		icon = GFX_goal_generic_army_doctrines
+		x = 6
+		y = 7
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = MAN_gvardeyskiedivizii  }
+	}
+
+	#Имперские вооружённые силы
+	focus = {
+		id = MAN_imperskievooruzhyonnyesily
+		icon = GFX_focus_generic_monarchy_2
+		x = 6
+		y = 8
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = MAN_razrabotkadoktrinvozdushnoyvoyny  focus = MAN_razrabotkamorskihdoktrinvoyny  focus = MAN_razrabotkadoktrinvozdushnoyvoyny  }
+	}
+
+	#Ставка на гражданские заводы
+	focus = {
+		id = MAN_stavkanagrazhdanskiezavody
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_investirovaniyaotsssr  focus = MAN_chastnyebelyeinvestory  focus = MAN_uvelichitinvestirovaniyaotgermanii  focus = MAN_uvelichitinvestirovaniyaotyaponii  focus = MAN_uvelichitinvestirovaniyaotssha  focus = MAN_uvelichitinvestirovaniyaotfrancii  focus = MAN_uvelichitinvestirovaniyaotvelikobritanii  }
+	}
+
+	#Разные взгляды, но цель одна
+	focus = {
+		id = MAN_raznyevzglyadynocelodna
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = 14
+		y = 2
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_podgotovkakvoynespartizanami  }
+	}
+
+	#Увеличить инвестирования от Японии
+	focus = {
+		id = MAN_uvelichitinvestirovaniyaotyaponii
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		x = 22
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#Увеличить инвестирования от Великобритании
+	focus = {
+		id = MAN_uvelichitinvestirovaniyaotvelikobritanii
+		icon = GFX_focus_chi_british_cooperation
+		x = 24
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#Увеличить инвестирования от США
+	focus = {
+		id = MAN_uvelichitinvestirovaniyaotssha
+		icon = GFX_focus_chi_mission_to_the_us
+		x = 25
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#Увеличить инвестирования от Франции
+	focus = {
+		id = MAN_uvelichitinvestirovaniyaotfrancii
+		icon = GFX_focus_chi_reach_out_to_france
+		x = 26
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#Возобновления отношений с СССР
+	focus = {
+		id = MAN_vozobnovleniyaotnosheniyssssr
+		icon = GFX_MAN_vozobnovleniyaotnosheniyssssr-262130
+		x = 34
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_gibkayavneshniepolitika  }
+	}
+
+	#Частные белые инвесторы
+	focus = {
+		id = MAN_chastnyebelyeinvestory
+		icon = GFX_goal_generic_improve_relations
+		x = 27
+		y = 3
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#Инвестирования от СССР
+	focus = {
+		id = MAN_investirovaniyaotsssr
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 28
+		y = 2
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#Контроль Японии над внешней политику Маньчжоу-го
+	focus = {
+		id = MAN_kontrolyaponiinadvneshneypolitikumanchzhougo
+		icon = GFX_MAN_kontrolyaponiinadvneshneypolitikumanchzhougo-59
+		x = 4
+		y = 12
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	#Гибкая внешние политика
+	focus = {
+		id = MAN_gibkayavneshniepolitika
+		icon = GFX_focus_generic_military_academy
+		x = 34
+		y = 12
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		mutually_exclusive = { focus = MAN_kontrolyaponiinadvneshneypolitikumanchzhougo  }
+	}
+
+	#Привлечь интересы Германия в Китайский регион
+	focus = {
+		id = MAN_privlechinteresygermaniyavkitayskiyregion
+		icon = GFX_focus_ger_oppose_hitler
+		x = 20
+		y = 13
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_gibkayavneshniepolitika  }
+	}
+
+	#Начать переговоры с белой русской диаспорой
+	focus = {
+		id = MAN_nachatperegovorysbeloyrusskoydiasporoy
+		icon = GFX_MAN_nachatperegovorysbeloyrusskoydiasporoy-527924
+		x = 27
+		y = 13
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_gibkayavneshniepolitika  }
+	}
+
+	#Ставка на лёгкую промышленность
+	focus = {
+		id = MAN_stavkanalyogkuyupromyshlennost
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 25
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_uvelichitinvestirovaniyaotgermanii  focus = MAN_uvelichitinvestirovaniyaotyaponii  focus = MAN_uvelichitinvestirovaniyaotvelikobritanii  focus = MAN_uvelichitinvestirovaniyaotssha  focus = MAN_uvelichitinvestirovaniyaotfrancii  focus = MAN_chastnyebelyeinvestory  focus = MAN_investirovaniyaotsssr  }
+	}
+
+	#Ставка на тяжелую промышленность
+	focus = {
+		id = MAN_stavkanatyazheluyupromyshlennost
+		icon = GFX_MAN_stavkanatyazheluyupromyshlennost-262080
+		x = 27
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_uvelichitinvestirovaniyaotgermanii  focus = MAN_uvelichitinvestirovaniyaotyaponii  focus = MAN_uvelichitinvestirovaniyaotvelikobritanii  focus = MAN_uvelichitinvestirovaniyaotssha  focus = MAN_uvelichitinvestirovaniyaotfrancii  focus = MAN_chastnyebelyeinvestory  focus = MAN_investirovaniyaotsssr  }
+		mutually_exclusive = { focus = MAN_stavkanalyogkuyupromyshlennost  }
+	}
+
+	#Новые заводы в столице
+	focus = {
+		id = MAN_novyezavodyvstolice
+		icon = GFX_goal_generic_construct_civilian
+		x = 21
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_stavkanagrazhdanskiezavody  }
+	}
+
+	#Новый дороги из столицы
+	focus = {
+		id = MAN_novyydorogiizstolicy
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 22
+		y = 6
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_novyezavodyvstolice  }
+	}
+
+	#Новый заводы в регионах
+	focus = {
+		id = MAN_novyyzavodyvregionah
+		icon = GFX_goal_generic_construction
+		x = 20
+		y = 6
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_novyezavodyvstolice  }
+	}
+
+	#Расширить программу поддержки легкой промышленности
+	focus = {
+		id = MAN_rasshiritprogrammupodderzhkilegkoypromyshlennosti
+		icon = GFX_goal_generic_construction2
+		x = 25
+		y = 5
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_stavkanalyogkuyupromyshlennost  }
+	}
+
+	#Программа модернизации заводов тяжёлой промышленности
+	focus = {
+		id = MAN_programmamodernizaciizavodovtyazhyoloypromyshlennosti
+		icon = GFX_MAN_programmamodernizaciizavodovtyazhyoloypromyshlennosti-446
+		x = 27
+		y = 5
+		cost = 7
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_stavkanatyazheluyupromyshlennost  }
+	}
+
+	#Строительство стаций
+	focus = {
+		id = MAN_stroitelstvostaciy
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 25
+		y = 7
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_zhdsvostokanazapad  } prerequisite = { focus = MAN_novyydorogiizstolicy  }
+	}
+
+	#Экономический подъём
+	focus = {
+		id = MAN_ekonomicheskiypodyom
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 23
+		y = 5
+		cost = 9
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_stavkanagrazhdanskiezavody  }
+	}
+
+	#Ж/д с востока на запад
+	focus = {
+		id = MAN_zhdsvostokanazapad
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 26
+		y = 6
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_rasshiritprogrammupodderzhkilegkoypromyshlennosti  focus = MAN_programmamodernizaciizavodovtyazhyoloypromyshlennosti  }
+	}
+
+	#Горы на границе страны
+	focus = {
+		id = MAN_gorynagranicestrany
+		icon = GFX_goal_generic_construct_military
+		x = 21
+		y = 7
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_novyezavodyvstolice  }
+	}
+
+	#Обезглавить змею
+	focus = {
+		id = MAN_obezglavitzmeyu
+		icon = GFX_focus_spr_crush_the_revolution
+		x = 12
+		y = 2
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_podgotovkakvoynespartizanami  }
+	}
+
+	#Просьба к СССР прислать генерала
+	focus = {
+		id = MAN_prosbaksssrprislatgenerala
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 37
+		y = 14
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_vozobnovleniyaotnosheniyssssr  }
+	}
+
+	#Запрос на военную помощь к СССР
+	focus = {
+		id = MAN_zaprosnavoennuyupomoshchksssr
+		icon = GFX_MAN_zaprosnavoennuyupomoshchksssr-262099
+		x = 37
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prosbaksssrprislatgenerala  }
+	}
+
+	#Примирение с Китаем
+	focus = {
+		id = MAN_primirenieskitaem
+		icon = GFX_MAN_primirenieskitaem-528135
+		x = 46
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_gibkayavneshniepolitika  }
+	}
+
+	#Серый кардинал в тени императора
+	focus = {
+		id = MAN_seryykardinalvteniimperatora
+		icon = GFX_focus_rom_handle_king
+		x = 2
+		y = 13
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_kontrolyaponiinadvneshneypolitikumanchzhougo  }
+	}
+
+	#Государственный совет
+	focus = {
+		id = MAN_gosudarstvennyysovet
+		icon = GFX_focus_jap_cast_the_die
+		x = 7
+		y = 13
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_kontrolyaponiinadvneshneypolitikumanchzhougo  }
+		mutually_exclusive = { focus = MAN_seryykardinalvteniimperatora  }
+	}
+
+	#Отправка солдат на учёбу в Японию
+	focus = {
+		id = MAN_otpravkasoldatnauchyobuvyaponiyu
+		icon = GFX_focus_generic_military_academy
+		x = 5
+		y = 14
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_seryykardinalvteniimperatora  focus = MAN_gosudarstvennyysovet  }
+	}
+
+	#Отправка учёных в Японию
+	focus = {
+		id = MAN_otpravkauchyonyhvyaponiyu
+		icon = GFX_focus_research2
+		x = 4
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_seryykardinalvteniimperatora  }
+	}
+
+	#Создание своих исследовательских групп
+	focus = {
+		id = MAN_sozdaniesvoihissledovatelskihgrupp
+		icon = GFX_focus_research
+		x = 6
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		prerequisite = { focus = MAN_gosudarstvennyysovet  }
+	}
+
+	#Японские офицеры в рядах вооружённых сил
+	focus = {
+		id = MAN_yaponskieoficeryvryadahvooruzhyonnyhsil
+		icon = GFX_focus_RAJ_indian_gentlemen_offcers
+		x = 1
+		y = 15
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_seryykardinalvteniimperatora  }
+	}
+
+	#Местные офицеры
+	focus = {
+		id = MAN_mestnyeoficery
+		icon = GFX_MAN_mestnyeoficery-528153
+		x = 8
+		y = 15
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = MAN_gosudarstvennyysovet  }
+	}
+
+	#Чёткие границы отчизны
+	focus = {
+		id = MAN_chyotkiegranicyotchizny
+		icon = GFX_focus_generic_self_management
+		x = 2
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = MAN_seryykardinalvteniimperatora  }
+	}
+
+	#Стабильность курса "Общество согласия"
+	focus = {
+		id = MAN_stabilnostkursaobshchestvosoglasiya
+		icon = GFX_focus_jap_spiritual_mobilization
+		x = 0
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_seryykardinalvteniimperatora  }
+	}
+
+	#Возврат курса "Общество согласия"
+	focus = {
+		id = MAN_vozvratkursaobshchestvosoglasiya
+		icon = GFX_focus_chi_one_china_policy
+		x = 7
+		y = 14
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_gosudarstvennyysovet  }
+	}
+
+	#Пересоздания диаспор в "Обществе согласия"
+	focus = {
+		id = MAN_peresozdaniyadiasporvobshchestvesoglasiya
+		icon = GFX_focus_generic_support_the_left_right
+		x = 7
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_STABILITY
+		}
+		prerequisite = { focus = MAN_vozvratkursaobshchestvosoglasiya  }
+	}
+
+	#Вассализация Мэнцязна
+	focus = {
+		id = MAN_vassalizaciyamencyazna
+		icon = GFX_focus_generic_treaty
+		x = 6
+		y = 17
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peresozdaniyadiasporvobshchestvesoglasiya  }
+	}
+
+	#Запрос на расширение границ на запад
+	focus = {
+		id = MAN_zaprosnarasshireniegranicnazapad
+		icon = GFX_goal_generic_forceful_treaty
+		x = 8
+		y = 17
+		cost = 3
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peresozdaniyadiasporvobshchestvesoglasiya  }
+		mutually_exclusive = { focus = MAN_vassalizaciyamencyazna  }
+	}
+
+	#Запрос на расширение границ на юг
+	focus = {
+		id = MAN_zaprosnarasshireniegranicnayug
+		icon = GFX_focus_generic_concessions
+		x = 5
+		y = 18
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peresozdaniyadiasporvobshchestvesoglasiya  }
+	}
+
+	#Воссоединения нации
+	focus = {
+		id = MAN_vossoedineniyanacii
+		icon = GFX_focus_generic_concessions
+		x = 9
+		y = 18
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peresozdaniyadiasporvobshchestvesoglasiya  }
+	}
+
+	#Провозгласить Малую империю Цин
+	focus = {
+		id = MAN_provozglasitmaluyuimperiyucin
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		x = 7
+		y = 18
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_zaprosnarasshireniegranicnayug  } prerequisite = { focus = MAN_vossoedineniyanacii  focus = MAN_vassalizaciyamencyazna  focus = MAN_zaprosnarasshireniegranicnazapad  }
+	}
+
+	#Подготовка к войне с Китаем
+	focus = {
+		id = MAN_podgotovkakvoyneskitaem
+		icon = GFX_MAN_podgotovkakvoyneskitaem-528159
+		x = 3
+		y = 16
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_yaponskieoficeryvryadahvooruzhyonnyhsil  } prerequisite = { focus = MAN_otpravkasoldatnauchyobuvyaponiyu  }
+	}
+
+	#План для военной промышленности
+	focus = {
+		id = MAN_plandlyavoennoypromyshlennosti
+		icon = GFX_focus_generic_industry_1
+		x = 2
+		y = 17
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_podgotovkakvoyneskitaem  }
+	}
+
+	#План для гражданской промышленности
+	focus = {
+		id = MAN_plandlyagrazhdanskoypromyshlennosti
+		icon = GFX_focus_generic_industry_2
+		x = 2
+		y = 18
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_plandlyavoennoypromyshlennosti  }
+	}
+
+	#План модернизации дорог до фронта
+	focus = {
+		id = MAN_planmodernizaciidorogdofronta
+		icon = GFX_focus_generic_industry_3
+		x = 2
+		y = 19
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		prerequisite = { focus = MAN_plandlyagrazhdanskoypromyshlennosti  }
+	}
+
+	#Подготовка армии к войне с Китаем
+	focus = {
+		id = MAN_podgotovkaarmiikvoyneskitaem
+		icon = GFX_focus_chi_army_reform
+		x = 4
+		y = 17
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_podgotovkakvoyneskitaem  }
+	}
+
+	#Подготовить армейский резерв
+	focus = {
+		id = MAN_podgotovitarmeyskiyrezerv
+		icon = GFX_goal_generic_small_arms
+		x = 4
+		y = 19
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		prerequisite = { focus = MAN_podgotovkaarmiikvoyneskitaem  }
+	}
+
+	#Дипломатическая миссия в Китай
+	focus = {
+		id = MAN_diplomaticheskayamissiyavkitay
+		icon = GFX_focus_chi_united_front
+		x = 46
+		y = 14
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_primirenieskitaem  }
+	}
+
+	#Гарантии в обмен на признание
+	focus = {
+		id = MAN_garantiivobmennapriznanie
+		icon = GFX_focus_chi_one_china_policy
+		x = 46
+		y = 15
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_diplomaticheskayamissiyavkitay  }
+	}
+
+	#Переговоры о создание нового государства
+	focus = {
+		id = MAN_peregovoryosozdanienovogogosudarstva
+		icon = GFX_focus_chi_proclaim_rival_government
+		x = 46
+		y = 16
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_garantiivobmennapriznanie  }
+	}
+
+	#Дипломатическая миссия в Японию
+	focus = {
+		id = MAN_diplomaticheskayamissiyavyaponiyu
+		icon = GFX_focus_AST_war_japan
+		x = 46
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peregovoryosozdanienovogogosudarstva  }
+	}
+
+	#Малый мандат небес
+	focus = {
+		id = MAN_malyymandatnebes
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		x = 46
+		y = 18
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_diplomaticheskayamissiyavyaponiyu  }
+	}
+
+	#Продолжение диалога с Китаем
+	focus = {
+		id = MAN_prodolzheniedialogaskitaem
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		x = 48
+		y = 14
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_primirenieskitaem  }
+		mutually_exclusive = { focus = MAN_diplomaticheskayamissiyavkitay  }
+	}
+
+	#Продолжение диалога с Коммунистическим Китаем
+	focus = {
+		id = MAN_prodolzheniedialogaskommunisticheskimkitaem
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		x = 44
+		y = 14
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_primirenieskitaem  }
+		mutually_exclusive = { focus = MAN_diplomaticheskayamissiyavkitay  }
+	}
+
+	#Разработка плана войны с Коммунистическим Китаем
+	focus = {
+		id = MAN_razrabotkaplanavoynyskommunisticheskimkitaem
+		icon = GFX_goal_generic_forceful_treaty
+		x = 48
+		y = 15
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prodolzheniedialogaskitaem  }
+	}
+
+	#Новые границы империй
+	focus = {
+		id = MAN_novyegranicyimperiy
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 50
+		y = 17
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voprosssinczyan  focus = MAN_pretenziinamongoliyu  focus = MAN_razrabotkaplanaatakinasibeysanma  focus = MAN_razrabotkaplanaatakinashansi  focus = MAN_naglovygnatyaponcevskontinenta  focus = MAN_razrabotkaplanavoynyskommunisticheskimkitaem  }
+	}
+
+	#Разработка плана атаки на Шаньси
+	focus = {
+		id = MAN_razrabotkaplanaatakinashansi
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 50
+		y = 15
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prodolzheniedialogaskitaem  }
+	}
+
+	#Разработка плана атаки на Сибэй Сань Ма
+	focus = {
+		id = MAN_razrabotkaplanaatakinasibeysanma
+		icon = GFX_goal_generic_attack_allies
+		x = 52
+		y = 15
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prodolzheniedialogaskitaem  }
+	}
+
+	#Вопрос с Синьцзянь
+	focus = {
+		id = MAN_voprosssinczyan
+		icon = GFX_MAN_voprosssinczyan-412
+		x = 52
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_razrabotkaplanavoynyskommunisticheskimkitaem  } prerequisite = { focus = MAN_razrabotkaplanaatakinashansi  } prerequisite = { focus = MAN_razrabotkaplanaatakinasibeysanma  }
+	}
+
+	#Претензии на Монголию
+	focus = {
+		id = MAN_pretenziinamongoliyu
+		icon = GFX_MAN_pretenziinamongoliyu-262014
+		x = 48
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_razrabotkaplanavoynyskommunisticheskimkitaem  } prerequisite = { focus = MAN_razrabotkaplanaatakinashansi  } prerequisite = { focus = MAN_razrabotkaplanaatakinasibeysanma  }
+	}
+
+	#Нагло выгнать Японцев с континента
+	focus = {
+		id = MAN_naglovygnatyaponcevskontinenta
+		icon = GFX_focus_RAJ_lions_of_the_great_war
+		x = 50
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_razrabotkaplanavoynyskommunisticheskimkitaem  } prerequisite = { focus = MAN_razrabotkaplanaatakinashansi  } prerequisite = { focus = MAN_razrabotkaplanaatakinasibeysanma  }
+	}
+
+	#Подготовиться к войне с Японией
+	focus = {
+		id = MAN_podgotovitsyakvoynesyaponiey
+		icon = GFX_focus_attack_japan
+		x = 50
+		y = 18
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novyegranicyimperiy  }
+	}
+
+	#Небесный мандат северного ветра
+	focus = {
+		id = MAN_nebesnyymandatsevernogovetra
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		x = 50
+		y = 19
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_podgotovitsyakvoynesyaponiey  }
+	}
+
+	#Начать переговоры с Китайской оппозицией
+	focus = {
+		id = MAN_nachatperegovoryskitayskoyoppoziciey
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 44
+		y = 15
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prodolzheniedialogaskommunisticheskimkitaem  }
+	}
+
+	#Разработка плана атаки на Китай
+	focus = {
+		id = MAN_razrabotkaplanaatakinakitay
+		icon = GFX_focus_attack_china
+		x = 42
+		y = 15
+		cost = 7
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prodolzheniedialogaskommunisticheskimkitaem  }
+	}
+
+	#Новая граница китайских держав
+	focus = {
+		id = MAN_novayagranicakitayskihderzhav
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 43
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatperegovoryskitayskoyoppoziciey  } prerequisite = { focus = MAN_razrabotkaplanaatakinakitay  }
+	}
+
+	#Убрать японскую угрозу на континенте
+	focus = {
+		id = MAN_ubratyaponskuyuugrozunakontinente
+		icon = GFX_focus_attack_japan
+		x = 43
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novayagranicakitayskihderzhav  }
+	}
+
+	#Небесный мандат восточного моря
+	focus = {
+		id = MAN_nebesnyymandatvostochnogomorya
+		icon = GFX_focus_man_claim_the_mandate_of_heaven
+		x = 43
+		y = 19
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_planvoynysyaponiey  }
+	}
+
+	#Тайный сбор партизан
+	focus = {
+		id = MAN_taynyysborpartizan
+		icon = GFX_MAN_taynyysborpartizan-528768
+		x = 40
+		y = 8
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_dvoynayaigraimperatora  }
+	}
+
+	#Двойная игра императора
+	focus = {
+		id = MAN_dvoynayaigraimperatora
+		icon = GFX_goal_generic_military_deal
+		x = 40
+		y = 7
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	#Сбор партизанских сил со всех соседних стран
+	focus = {
+		id = MAN_sborpartizanskihsilsovsehsosednihstran
+		icon = GFX_MAN_sborpartizanskihsilsovsehsosednihstran-528769
+		x = 40
+		y = 9
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_taynyysborpartizan  }
+	}
+
+	#Обращение партизан к СССР
+	focus = {
+		id = MAN_obrashcheniepartizanksssr
+		icon = GFX_MAN_obrashcheniepartizanksssr-528770
+		x = 40
+		y = 10
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_sborpartizanskihsilsovsehsosednihstran  }
+	}
+
+	#Интегрировать партизан в армию
+	focus = {
+		id = MAN_integrirovatpartizanvarmiyu
+		icon = GFX_goal_generic_small_arms
+		x = 41
+		y = 11
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_obrashcheniepartizanksssr  }
+	}
+
+	#Изучения трудов Ленина и Маркса
+	focus = {
+		id = MAN_izucheniyatrudovleninaimarksa
+		icon = GFX_MAN_izucheniyatrudovleninaimarksa-262128
+		x = 34
+		y = 14
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_vozobnovleniyaotnosheniyssssr  }
+	}
+
+	#Красный император
+	focus = {
+		id = MAN_krasnyyimperator
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 33
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_reformyvstrane  }
+	}
+
+	#Война с Японией
+	focus = {
+		id = MAN_voynasyaponiey
+		icon = GFX_focus_attack_japan
+		x = 39
+		y = 18
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_podgotovkakvoynesyaponiney  }
+	}
+
+	#Подготовка к войне с Япониней
+	focus = {
+		id = MAN_podgotovkakvoynesyaponiney
+		icon = GFX_focus_jap_cast_the_die
+		x = 39
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_obshchiygenshtabskommunisticheskimkitaem  focus = MAN_prosbaksssrprislatgenerala  }
+	}
+
+	#Общий генштаб с Коммунистическим Китаем
+	focus = {
+		id = MAN_obshchiygenshtabskommunisticheskimkitaem
+		icon = GFX_focus_por_workers_of_iberia
+		x = 40
+		y = 16
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prodolzheniedialogaskommunisticheskimkitaem  } prerequisite = { focus = MAN_integrirovatpartizanvarmiyu  focus = MAN_prodolzheniedialogaskommunisticheskimkitaem  } prerequisite = { focus = MAN_zalechnadnoiozhidatprikaza  }
+		mutually_exclusive = { focus = MAN_novayagranicakitayskihderzhav  }
+	}
+
+	#Призвать Коммунистический Китай в войну с Японией
+	focus = {
+		id = MAN_prizvatkommunisticheskiykitayvvoynusyaponiey
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		x = 41
+		y = 19
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voynasyaponiey  } prerequisite = { focus = MAN_obshchiygenshtabskommunisticheskimkitaem  }
+	}
+
+	#Изменить строй на республиканский
+	focus = {
+		id = MAN_izmenitstroynarespublikanskiy
+		icon = GFX_MAN_izmenitstroynarespublikanskiy-427
+		x = 35
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_reformyvstrane  }
+		mutually_exclusive = { focus = MAN_krasnyyimperator  }
+	}
+
+	#Зов на помощь
+	focus = {
+		id = MAN_zovnapomoshch
+		icon = GFX_MAN_zovnapomoshch-262119
+		x = 37
+		y = 19
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voynasyaponiey  } prerequisite = { focus = MAN_zaprosnavoennuyupomoshchksssr  }
+	}
+
+	#Маньчжурская ССР
+	focus = {
+		id = MAN_manchzhurskayassr
+		icon = GFX_focus_jap_manchurian_project
+		x = 36
+		y = 20
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_zovnapomoshch  } prerequisite = { focus = MAN_izmenitstroynarespublikanskiy  }
+	}
+
+	#Маньчжурская социалистическая республика
+	focus = {
+		id = MAN_manchzhurskayasocialisticheskayarespublika
+		icon = GFX_focus_jap_manchurian_project
+		x = 34
+		y = 20
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_zaprosnavoennuyupomoshchksssr  focus = MAN_izmenitstroynarespublikanskiy  }
+		mutually_exclusive = { focus = MAN_manchzhurskayassr  }
+	}
+
+	#Укрепить власть императора в Маньчжоу-го
+	focus = {
+		id = MAN_ukrepitvlastimperatoravmanchzhougo
+		icon = GFX_focus_chi_proclaim_rival_government
+		x = 40
+		y = 20
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prizvatkommunisticheskiykitayvvoynusyaponiey  }
+	}
+
+	#Войти в состав Коммунистического Китая
+	focus = {
+		id = MAN_voytivsostavkommunisticheskogokitaya
+		icon = GFX_focus_chi_whampoa_military_academy
+		x = 42
+		y = 20
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prizvatkommunisticheskiykitayvvoynusyaponiey  }
+		mutually_exclusive = { focus = MAN_ukrepitvlastimperatoravmanchzhougo  }
+	}
+
+	#День голосований
+	focus = {
+		id = MAN_dengolosovaniy
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 41
+		y = 21
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_voytivsostavkommunisticheskogokitaya  focus = MAN_ukrepitvlastimperatoravmanchzhougo  }
+	}
+
+	#Единый Китай
+	focus = {
+		id = MAN_edinyykitay
+		icon = GFX_focus_chi_one_china_policy
+		x = 41
+		y = 22
+		cost = 20
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_dengolosovaniy  }
+	}
+
+	#Северо-восточное китайско-социалистическая республика
+	focus = {
+		id = MAN_severovostochnoekitayskosocialisticheskayarespublika
+		icon = GFX_focus_chi_one_china_policy
+		x = 34
+		y = 21
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_manchzhurskayasocialisticheskayarespublika  focus = MAN_ukrepitvlastimperatoravmanchzhougo  }
+	}
+
+	#Сотрудничать с СССР
+	focus = {
+		id = MAN_sotrudnichatssssr
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 33
+		y = 22
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_severovostochnoekitayskosocialisticheskayarespublika  }
+	}
+
+	#Сотрудничать с Коммунистическим Китаем
+	focus = {
+		id = MAN_sotrudnichatskommunisticheskimkitaem
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		x = 35
+		y = 22
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_severovostochnoekitayskosocialisticheskayarespublika  }
+		mutually_exclusive = { focus = MAN_sotrudnichatssssr  }
+	}
+
+	#День выборов в Маньчжурской ССР
+	focus = {
+		id = MAN_denvyborovvmanchzhurskoyssr
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 36
+		y = 21
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_manchzhurskayassr  }
+	}
+
+	#Фильтрация белого движения
+	focus = {
+		id = MAN_filtraciyabelogodvizheniya
+		icon = GFX_MAN_filtraciyabelogodvizheniya-528832
+		x = 35
+		y = 17
+		cost = 7
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_izmenitstroynarespublikanskiy  }
+	}
+
+	#Выгнать из страны белых фашистов
+	focus = {
+		id = MAN_vygnatizstranybelyhfashistov
+		icon = GFX_MAN_vygnatizstranybelyhfashistov-528834
+		x = 35
+		y = 18
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_filtraciyabelogodvizheniya  }
+	}
+
+	#Мультикультурализм
+	focus = {
+		id = MAN_multikulturalizm
+		icon = GFX_focus_jap_manchurian_project
+		x = 33
+		y = 17
+		cost = 12
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_krasnyyimperator  focus = MAN_izmenitstroynarespublikanskiy  }
+	}
+
+	#Начать дипломатическое давление на страны
+	focus = {
+		id = MAN_nachatdiplomaticheskoedavlenienastrany
+		icon = GFX_focus_eng_global_defense
+		x = 40
+		y = 2
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+	}
+
+	#Объединить Китай
+	focus = {
+		id = MAN_obedinitkitay
+		icon = GFX_focus_chi_one_china_policy
+		x = 41
+		y = 4
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Восстановить Великою Империю Цин
+	focus = {
+		id = MAN_vosstanovitvelikoyuimperiyucin
+		icon = GFX_focus_chi_one_china_policy
+		x = 39
+		y = 4
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Возврат себе Индокитая
+	focus = {
+		id = MAN_vozvratsebeindokitaya
+		icon = GFX_focus_chi_one_china_policy
+		x = 42
+		y = 3
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Интересы в Индии
+	focus = {
+		id = MAN_interesyvindii
+		icon = GFX_focus_chi_one_china_policy
+		x = 43
+		y = 4
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Возращение корейского полуострова
+	focus = {
+		id = MAN_vozrashcheniekoreyskogopoluostrova
+		icon = GFX_focus_chi_one_china_policy
+		x = 38
+		y = 3
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Дать кочевому народу постоянный дом
+	focus = {
+		id = MAN_datkochevomunarodupostoyannyydom
+		icon = GFX_focus_chi_one_china_policy
+		x = 37
+		y = 4
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Вернуть Синьцзян
+	focus = {
+		id = MAN_vernutsinczyan
+		icon = GFX_focus_chi_one_china_policy
+		x = 36
+		y = 3
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Возращение территорий Китая оккупированных Японией
+	focus = {
+		id = MAN_vozrashchenieterritoriykitayaokkupirovannyhyaponiey
+		icon = GFX_focus_chi_one_china_policy
+		x = 40
+		y = 3
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Территории дальнего востока
+	focus = {
+		id = MAN_territoriidalnegovostoka
+		icon = GFX_focus_chi_one_china_policy
+		x = 44
+		y = 3
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatdiplomaticheskoedavlenienastrany  }
+	}
+
+	#Ставка на аристократов
+	focus = {
+		id = MAN_stavkanaaristokratov
+		icon = GFX_focus_ger_revive_kaiserreich
+		x = 19
+		y = 14
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_privlechinteresygermaniyavkitayskiyregion  }
+	}
+
+	#Ставка на немецких политиков
+	focus = {
+		id = MAN_stavkananemeckihpolitikov
+		icon = GFX_focus_chi_mission_to_germany
+		x = 21
+		y = 14
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_privlechinteresygermaniyavkitayskiyregion  }
+		mutually_exclusive = { focus = MAN_stavkanaaristokratov  }
+	}
+
+	#Увеличить частные инвестиции
+	focus = {
+		id = MAN_uvelichitchastnyeinvesticii
+		icon = GFX_focus_ger_reichskommisariats
+		x = 20
+		y = 15
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_stavkananemeckihpolitikov  focus = MAN_stavkanaaristokratov  }
+	}
+
+	#Заинтересовать Вильгельма
+	focus = {
+		id = MAN_zainteresovatvilgelma
+		icon = GFX_focus_ger_return_of_the_kaiser
+		x = 19
+		y = 16
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_uvelichitchastnyeinvesticii  focus = MAN_stavkanaaristokratov  }
+	}
+
+	#Заинтересовать Гитлера
+	focus = {
+		id = MAN_zainteresovatgitlera
+		icon = GFX_MAN_zainteresovatgitlera-529184
+		x = 21
+		y = 16
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_stavkananemeckihpolitikov  } prerequisite = { focus = MAN_uvelichitchastnyeinvesticii  }
+	}
+
+	#Германские эмигранты
+	focus = {
+		id = MAN_germanskieemigranty
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 19
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_zainteresovatvilgelma  }
+	}
+
+	#Немецкие эмигранты
+	focus = {
+		id = MAN_nemeckieemigranty
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 21
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_zainteresovatgitlera  }
+	}
+
+	#Программа по интеграции белых
+	focus = {
+		id = MAN_programmapointegraciibelyh
+		icon = GFX_MAN_programmapointegraciibelyh-529457
+		x = 27
+		y = 14
+		cost = 12
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nachatperegovorysbeloyrusskoydiasporoy  }
+	}
+
+	#Принять русскую диаспору во внутреннею политику
+	focus = {
+		id = MAN_prinyatrusskuyudiasporuvovnutrenneyupolitiku
+		icon = GFX_MAN_prinyatrusskuyudiasporuvovnutrenneyupolitiku-529459
+		x = 27
+		y = 15
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_programmapointegraciibelyh  }
+	}
+
+	#Доминирование правых
+	focus = {
+		id = MAN_dominirovaniepravyh
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 26
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prinyatrusskuyudiasporuvovnutrenneyupolitiku  }
+	}
+
+	#Прощение
+	focus = {
+		id = MAN_proshchenie
+		icon = GFX_goal_generic_major_alliance
+		x = 28
+		y = 16
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_prinyatrusskuyudiasporuvovnutrenneyupolitiku  }
+		mutually_exclusive = { focus = MAN_dominirovaniepravyh  }
+	}
+
+	#Использовать российское золото
+	focus = {
+		id = MAN_ispolzovatrossiyskoezoloto
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 25
+		y = 17
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_dominirovaniepravyh  focus = MAN_proshchenie  }
+	}
+
+	#Православная церковь в Маньчжоу-го
+	focus = {
+		id = MAN_pravoslavnayacerkovvmanchzhougo
+		icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
+		x = 27
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_dominirovaniepravyh  focus = MAN_proshchenie  }
+	}
+
+	#Дать дом главе Российского императорского дома
+	focus = {
+		id = MAN_datdomglaverossiyskogoimperatorskogodoma
+		icon = GFX_MAN_datdomglaverossiyskogoimperatorskogodoma-262136
+		x = 29
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_proshchenie  }
+	}
+
+	#Новая русская армия
+	focus = {
+		id = MAN_novayarusskayaarmiya
+		icon = GFX_MAN_novayarusskayaarmiya-529463
+		x = 27
+		y = 18
+		cost = 12
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_ispolzovatrossiyskoezoloto  } prerequisite = { focus = MAN_pravoslavnayacerkovvmanchzhougo  } prerequisite = { focus = MAN_datdomglaverossiyskogoimperatorskogodoma  }
+	}
+
+	#Предать белых военных преступников и белых фашистов СССР
+	focus = {
+		id = MAN_predatbelyhvoennyhprestupnikovibelyhfashistovsssr
+		icon = GFX_MAN_predatbelyhvoennyhprestupnikovibelyhfashistovsssr-528832
+		x = 31
+		y = 18
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_filtraciyabelogodvizheniya  } prerequisite = { focus = MAN_zapertfashizma  }
+		mutually_exclusive = { focus = MAN_vygnatizstranybelyhfashistov  }
+	}
+
+	#Заперт фашизма
+	focus = {
+		id = MAN_zapertfashizma
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 31
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_krasnyyimperator  }
+	}
+
+	#Закрыть дела о преследование белых в Маньчжоу-го и СССР
+	focus = {
+		id = MAN_zakrytdelaopresledovaniebelyhvmanchzhougoisssr
+		icon = GFX_MAN_zakrytdelaopresledovaniebelyhvmanchzhougoisssr-262102
+		x = 30
+		y = 19
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_datdomglaverossiyskogoimperatorskogodoma  } prerequisite = { focus = MAN_predatbelyhvoennyhprestupnikovibelyhfashistovsssr  }
+	}
+
+	#Единая страна
+	focus = {
+		id = MAN_edinayastrana
+		icon = GFX_focus_chi_one_china_policy
+		x = 31
+		y = 20
+		cost = 16
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_zakrytdelaopresledovaniebelyhvmanchzhougoisssr  }
+	}
+
+	#Переговоры с СССР о Российской империи
+	focus = {
+		id = MAN_peregovoryssssrorossiyskoyimperii
+		icon = GFX_MAN_peregovoryssssrorossiyskoyimperii-262119
+		x = 29
+		y = 20
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_zakrytdelaopresledovaniebelyhvmanchzhougoisssr  }
+		mutually_exclusive = { focus = MAN_edinayastrana  }
+	}
+
+	#Создать вторую Россию
+	focus = {
+		id = MAN_sozdatvtoruyurossiyu
+		icon = GFX_MAN_sozdatvtoruyurossiyu-527924
+		x = 27
+		y = 21
+		cost = 20
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novayarusskayaarmiya  } prerequisite = { focus = MAN_peregovoryssssrorossiyskoyimperii  } prerequisite = { focus = MAN_uvelicheniyasloyaintelligencii  }
+	}
+
+	#Немецкая угроза в Европе
+	focus = {
+		id = MAN_nemeckayaugrozavevrope
+		icon = GFX_focus_attack_germany
+		x = 27
+		y = 22
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_sozdatvtoruyurossiyu  }
+	}
+
+	#Всероссийская фашистка партия набирает свою мощь
+	focus = {
+		id = MAN_vserossiyskayafashistkapartiyanabiraetsvoyumoshch
+		icon = GFX_MAN_vserossiyskayafashistkapartiyanabiraetsvoyumoshch-428
+		x = 23
+		y = 17
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_dominirovaniepravyh  }
+	}
+
+	#Союз немецкими фашистами
+	focus = {
+		id = MAN_soyuznemeckimifashistami
+		icon = GFX_goal_generic_dangerous_deal
+		x = 20
+		y = 18
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_nemeckieemigranty  } prerequisite = { focus = MAN_vserossiyskayafashistkapartiyanabiraetsvoyumoshch  }
+	}
+
+	#Союз с Квантунской армией
+	focus = {
+		id = MAN_soyuzskvantunskoyarmiey
+		icon = GFX_focus_generic_japanese_imperial_glory
+		x = 22
+		y = 18
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_vserossiyskayafashistkapartiyanabiraetsvoyumoshch  }
+	}
+
+	#Переговоры с Японией о передачи власти
+	focus = {
+		id = MAN_peregovorysyaponieyoperedachivlasti
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		x = 21
+		y = 19
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_soyuzskvantunskoyarmiey  } prerequisite = { focus = MAN_novayarusskayaarmiya  focus = MAN_soyuznemeckimifashistami  } prerequisite = { focus = MAN_novayarusskayaarmiya  }
+	}
+
+	#Свергнуть правительство Маньчжоу-го
+	focus = {
+		id = MAN_svergnutpravitelstvomanchzhougo
+		icon = GFX_focus_jap_manchurian_project
+		x = 21
+		y = 20
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peregovorysyaponieyoperedachivlasti  }
+	}
+
+	#Создать Жёлтороссию
+	focus = {
+		id = MAN_sozdatzhyoltorossiyu
+		icon = GFX_MAN_sozdatzhyoltorossiyu-527924
+		x = 21
+		y = 21
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_svergnutpravitelstvomanchzhougo  }
+	}
+
+	#Диктатор во главе
+	focus = {
+		id = MAN_diktatorvoglave
+		icon = GFX_MAN_diktatorvoglave-262024
+		x = 20
+		y = 22
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_sozdatzhyoltorossiyu  }
+		mutually_exclusive = { focus = MAN_monarhvoglave  }
+	}
+
+	#Монарх во главе
+	focus = {
+		id = MAN_monarhvoglave
+		icon = GFX_focus_generic_monarchy_1
+		x = 22
+		y = 22
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_datdomglaverossiyskogoimperatorskogodoma  } prerequisite = { focus = MAN_sozdatzhyoltorossiyu  }
+	}
+
+	#Новая армия
+	focus = {
+		id = MAN_novayaarmiya
+		icon = GFX_MAN_novayaarmiya-528770
+		x = 21
+		y = 23
+		cost = 6
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novayarusskayaarmiya  } prerequisite = { focus = MAN_monarhvoglave  focus = MAN_diktatorvoglave  } prerequisite = { focus = MAN_novayarusskayaarmiya  }
+	}
+
+	#Восстановить империю Цин
+	focus = {
+		id = MAN_vosstanovitimperiyucin
+		icon = GFX_focus_chi_one_china_policy
+		x = 21
+		y = 24
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novayaarmiya  }
+	}
+
+	#Месть СССР
+	focus = {
+		id = MAN_mestsssr
+		icon = GFX_focus_attack_soviet
+		x = 21
+		y = 25
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_vosstanovitimperiyucin  }
+	}
+
+	#Восстановить Российскую империю.
+	focus = {
+		id = MAN_vosstanovitrossiyskuyuimperiyu
+		icon = GFX_MAN_vosstanovitrossiyskuyuimperiyu-262136
+		x = 21
+		y = 26
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_mestsssr  }
+	}
+
+	#Новый титул
+	focus = {
+		id = MAN_novyytitul
+		icon = GFX_MAN_novyytitul-262136
+		x = 21
+		y = 27
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_vosstanovitrossiyskuyuimperiyu  }
+	}
+
+	#Безопасность на востоке
+	focus = {
+		id = MAN_bezopasnostnavostoke
+		icon = GFX_focus_attack_japan
+		x = 19
+		y = 28
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novyytitul  }
+	}
+
+	#Убрать угрозу с запада
+	focus = {
+		id = MAN_ubratugrozuszapada
+		icon = GFX_focus_attack_germany
+		x = 23
+		y = 28
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novyytitul  }
+	}
+
+	#Убрать угрозу с севера
+	focus = {
+		id = MAN_ubratugrozussevera
+		icon = GFX_focus_usa_recruit_the_free_corps
+		x = 21
+		y = 28
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_novyytitul  }
+	}
+
+	#Угроза через море
+	focus = {
+		id = MAN_ugrozacherezmore
+		icon = GFX_focus_usa_build_the_pentagon
+		x = 31
+		y = 21
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peregovoryssssrorossiyskoyimperii  focus = MAN_edinayastrana  }
+	}
+
+	#Разобраться с главными пиратами этого мира
+	focus = {
+		id = MAN_razobratsyasglavnymipiratamietogomira
+		icon = GFX_focus_AST_never_gallipoli
+		x = 29
+		y = 21
+		cost = 4
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_peregovoryssssrorossiyskoyimperii  focus = MAN_edinayastrana  }
+	}
+
+	#Союз аристократов
+	focus = {
+		id = MAN_soyuzaristokratov
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 25
+		y = 19
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_ispolzovatrossiyskoezoloto  } prerequisite = { focus = MAN_novayarusskayaarmiya  }
+	}
+
+	#Увеличения слоя интеллигенции
+	focus = {
+		id = MAN_uvelicheniyasloyaintelligencii
+		icon = GFX_focus_generic_monarchy_2
+		x = 25
+		y = 20
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_soyuzaristokratov  }
+	}
+
+	#Восстановить Пруссию и Веймарскую республику
+	focus = {
+		id = MAN_vosstanovitprussiyuiveymarskuyurespubliku
+		icon = GFX_focus_chi_mission_to_germany
+		x = 25
+		y = 22
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_sozdatvtoruyurossiyu  }
+		mutually_exclusive = { focus = MAN_nemeckayaugrozavevrope  }
+	}
+
+	#Решить вопрос с Австро-венгерскими территориями
+	focus = {
+		id = MAN_reshitvoprossavstrovengerskimiterritoriyami
+		icon = GFX_MAN_reshitvoprossavstrovengerskimiterritoriyami-259
+		x = 25
+		y = 23
+		cost = 8
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_vosstanovitprussiyuiveymarskuyurespubliku  }
+	}
+
+	#Мукденский арсенал (игровой фокус)
+	focus = {
+		id = MAN_mukdenskiyarsenaligrovoyfokus
+		icon = GFX_goal_unknown
+		x = 20
+		y = 3
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_pyatiletniyplanigrovoyfokus  }
+	}
+
+	#Маньчжурское авиастроение (игровой фокус)
+	focus = {
+		id = MAN_manchzhurskoeaviastroenieigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 20
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_mukdenskiyarsenaligrovoyfokus  }
+	}
+
+	#Металлургический комбинат Сёва (игрой фокус)
+	focus = {
+		id = MAN_metallurgicheskiykombinatsyovaigroyfokus
+		icon = GFX_goal_unknown
+		x = 18
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_razrabotkaalyuminiyaigrovoyfokus  }
+	}
+
+	#Разработка алюминия (игровой фокус)
+	focus = {
+		id = MAN_razrabotkaalyuminiyaigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 18
+		y = 3
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_pyatiletniyplanigrovoyfokus  }
+	}
+
+	#Расширение сети ж/д (игровой фокус)
+	focus = {
+		id = MAN_rasshireniesetizhdigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 16
+		y = 3
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_pyatiletniyplanigrovoyfokus  }
+	}
+
+	#Отдел социальных исследований (игровой фокус)
+	focus = {
+		id = MAN_otdelsocialnyhissledovaniyigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 16
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_rasshireniesetizhdigrovoyfokus  }
+	}
+
+	#Режим национальной обороны (игровой фокус)
+	focus = {
+		id = MAN_rezhimnacionalnoyoboronyigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 18
+		y = 6
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_manchzhurskoeaviastroenieigrovoyfokus  } prerequisite = { focus = MAN_metallurgicheskiykombinatsyovaigroyfokus  } prerequisite = { focus = MAN_otdelsocialnyhissledovaniyigrovoyfokus  }
+	}
+
+	#Привлечь японских инвесторов (игровой фокус)
+	focus = {
+		id = MAN_privlechyaponskihinvestorovigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 18
+		y = 1
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
+		mutually_exclusive = { focus = MAN_voprospromyshlennost  }
+	}
+
+	#Пятилетний план (игровой фокус)
+	focus = {
+		id = MAN_pyatiletniyplanigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 18
+		y = 2
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_privlechyaponskihinvestorovigrovoyfokus  }
+	}
+
+	#Следующий пятилетний план (игровой фокус)
+	focus = {
+		id = MAN_sleduyushchiypyatiletniyplanigrovoyfokus
+		icon = GFX_goal_unknown
+		x = 18
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = MAN_sleduyushchiypyatiletniyplanigrovoyfokus  }
+	}
+
+}
