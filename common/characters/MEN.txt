@@ -1,0 +1,303 @@
+characters={
+	MEN_prince_demchugdongrub={
+		name=MEN_prince_demchugdongrub
+		portraits={
+			civilian={
+				large="GFX_portrait_men_demchugdongrub"
+			}
+		}
+		country_leader={
+			ideology=rexism
+			traits={ spirit_of_genghis }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		field_marshal={
+			traits={ cavalry_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+	MEN_ulanhu={
+		name=MEN_ulanhu
+		portraits={
+			civilian={
+				large=GFX_portrait_Zhao_Zhanshan
+			}
+		}
+		country_leader={
+			ideology=marxism
+			expire="1946.1.1.12"
+			id=-1
+		}
+	}
+	MEN_li_shouxin={
+		name=MEN_li_shouxin
+		portraits={
+			army={
+				large="gfx/leaders/MEN/Portrait_Li_Shouxin.dds"
+			}
+			civilian={
+				large="gfx/leaders/MEN/Portrait_Li_Shouxin.dds"
+			}
+		}
+		field_marshal={
+			traits={ cavalry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+		}
+	}
+	MEN_ding_qichang={
+		name=MEN_ding_qichang
+		portraits={
+			army={
+				small="GFX_"
+			}
+			army={
+				large="gfx/leaders/MEN/Portrait_Ding_Qichang.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	MEN_liu_jiguang={
+		name=MEN_liu_jiguang
+		portraits={
+			army={
+				small="GFX_"
+			}
+			army={
+				large="gfx/leaders/MEN/Portrait_Liu_Jiguang.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	MEN_mukdenbao={
+		name=MEN_mukdenbao
+		portraits={
+			army={
+				small="GFX_"
+			}
+			army={
+				large="gfx/leaders/MEN/Portrait_Mukdenbao.dds"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected cavalry_officer }
+			skill=1
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	MEN_bao_yueqing={
+		name=MEN_bao_yueqing
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_6"
+				large="gfx/leaders/MEN/Portrait_Bao_Yueqing.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer JAP_communist_sympathizer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = MEN_bao_yueqing
+			allowed = {
+				OR = {
+				    original_tag = MEN
+				}	
+			}
+			traits = {
+				army_cavalry_3
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MEN_altanochir={
+		name=MEN_altanochir
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_1"
+				large="gfx/leaders/MEN/Portrait_Altanochir.dds"
+			}
+		}
+		advisor = {
+			slot = high_command
+			ledger = army
+			idea_token = MEN_altanochir
+			allowed = {
+				original_tag = MEN
+			}
+			traits = {
+				army_cavalry_1  
+			}
+		}
+		corps_commander={
+			traits={ old_guard cavalry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	MEN_buyingdalai={
+		name=MEN_buyingdalai
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_2"
+				large="gfx/leaders/MEN/Portrait_Buyingdalai.dds"
+			}
+		}
+		advisor = {
+			slot = army_chief
+			ledger = army
+			idea_token = MEN_buyingdalai
+			allowed = {
+				original_tag = MEN
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MEN_buyingdalai
+			allowed = {
+				original_tag = MEN
+			}
+			traits = {
+				chairman_communist
+			}
+		}
+		corps_commander={
+			traits={ old_guard irregulars_officer JAP_communist_sympathizer }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	MEN_jodbajab={
+		name=MEN_jodbajab
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_4"
+				large="gfx/leaders/MEN/Portrait_Jodbajab.dds"
+			}
+		}
+		advisor = {
+			slot = theorist
+			ledger = army
+			idea_token = MEN_jodbajab_1
+			allowed = {
+				original_tag = MEN
+			}
+			traits = {
+				military_theorist 
+			}
+		}
+		corps_commander={
+			traits={ trait_cautious inflexible_strategist irregulars_officer old_guard cavalry_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	MEN_yondonwangchug={
+		name=MEN_yondonwangchug
+		portraits={
+			civilian={
+				large="gfx/leaders/MEN/Portrait_Yondonwangchug.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MEN_jodbajab
+			allowed = {
+				original_tag = MEN
+			}
+			traits = {
+				chairman
+			}
+		}
+	}
+	MEN_jin_yongchang={
+		name=MEN_jin_yongchang
+		portraits={
+			army={
+				small="GFX_idea_generic_army_asia_2"
+				large="gfx/leaders/MEN/Portrait_Jin_Yongchang.dds"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = MEN_jodbajab
+			allowed = {
+				original_tag = MEN
+			}
+			traits = {
+				communications_minister
+			}
+		}
+	}
+	MEN_serengdongrub = {
+		name = MEN_serengdongrub
+		advisor = {
+			slot = political_advisor
+			idea_token = MEN_serengdongrub
+			allowed = {
+				original_tag = MEN
+			}
+			traits = {
+				silent_workhorse
+			}
+		}
+		country_leader = {
+			desc = MEN_serengdongrub
+			ideology = conservatism
+			expire = "1963.1.1.1"
+		}
+	}
+}
+

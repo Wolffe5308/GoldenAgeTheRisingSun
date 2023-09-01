@@ -1,0 +1,10 @@
+MEN_mongolian_military_administration = {
+    color = rgb { 168 168 168 }
+    color_ui = rgb { 168 168 168 }
+}
+
+MEN_mongolian_united_autonomous_government = {
+    color = rgb { 168 168 168 }
+    color_ui = rgb { 168 168 168 }
+}
+

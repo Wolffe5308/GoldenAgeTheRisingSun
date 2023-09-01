@@ -1,0 +1,101 @@
+﻿capital = 611
+
+oob = "MEN_1936"
+
+set_technology = {
+	infantry_weapons = 1
+	
+}
+
+set_party_name = {
+	ideology = democratic
+	long_name = MEN_people's_revolutionary_party_of_inner_mongolia_pro_chinise_long
+	name = MEN_people's_revolutionary_party_of_inner_mongolia_pro_chinise
+}
+
+set_party_name = {
+	ideology = communism
+	long_name = MEN_people's_revolutionary_party_of_inner_mongolia_left_long
+	name = MEN_people's_revolutionary_party_of_inner_mongolia_left
+}
+
+set_party_name = {
+	ideology = fascism
+	long_name = MEN_de_wan_administration_long
+	name = MEN_de_wan_administration
+}
+
+set_cosmetic_tag = MEN_mongolian_military_administration
+
+recruit_character = MEN_prince_demchugdongrub
+recruit_character = MEN_ulanhu
+recruit_character = MEN_li_shouxin
+recruit_character = MEN_ding_qichang
+recruit_character = MEN_liu_jiguang
+recruit_character = MEN_mukdenbao
+recruit_character = MEN_bao_yueqing
+recruit_character = MEN_altanochir
+recruit_character = MEN_buyingdalai
+recruit_character = MEN_jodbajab
+recruit_character = MEN_yondonwangchug
+recruit_character = MEN_jin_yongchang
+recruit_character = MEN_serengdongrub
+
+1939.1.1 = {
+
+	add_to_war = {
+		targeted_alliance = JAP
+		enemy = CHI
+		hostility_reason = puppet
+	}
+	
+	add_political_power = 1198
+	add_command_power = 100
+	
+	#generic focuses
+	complete_national_focus = army_effort
+	complete_national_focus = equipment_effort
+	complete_national_focus = motorization_effort
+	complete_national_focus = aviation_effort
+	complete_national_focus = naval_effort
+	complete_national_focus = flexible_navy
+	complete_national_focus = industrial_effort
+	complete_national_focus = construction_effort
+	complete_national_focus = production_effort
+	
+	oob = "MEN_1939"
+	set_technology = {
+		#doctrines
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	fascism = 80
+	neutrality = 10
+	communism = 10
+}
