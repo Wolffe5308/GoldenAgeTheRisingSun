@@ -25,7 +25,7 @@ focus_tree = {
 	focus = {
 		id = MAN_uvelichitinvestirovaniyaotgermanii
 		icon = GFX_focus_chi_mission_to_germany
-		x = 23
+		x = 29
 		y = 3
 		cost = 3
 		search_filters = {
@@ -51,7 +51,7 @@ focus_tree = {
 	focus = {
 		id = MAN_podgotovkakvoynespartizanami
 		icon = GFX_focus_prc_infiltration
-		x = 13
+		x = 19
 		y = 1
 		cost = 2
 		search_filters = {
@@ -78,102 +78,197 @@ focus_tree = {
 	focus = {
 		id = MAN_stroitelstvonovogoflotamanchzhougo
 		icon = GFX_MAN_stroitelstvonovogoflotamanchzhougo-262058
-		x = 1
+		prerequisite = { focus = MAN_razrabotkinovyhkorobley  focus = MAN_modernizaciyakorabley  }
+		x = 7
 		y = 6
 		cost = 10
+
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		prerequisite = { focus = MAN_razrabotkinovyhkorobley  focus = MAN_modernizaciyakorabley  }
+
+		completion_reward = {
+			716 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = MAN_imperial_navy_3
+				add_idea = MAN_imperial_navy_4
+			}
+		}
 	}
 
 	#Модернизация кораблей
 	focus = {
 		id = MAN_modernizaciyakorabley
 		icon = GFX_MAN_modernizaciyakorabley-404
-		x = 2
+		prerequisite = { focus = MAN_podgotovitinfrastrukturudlyavmf }
+		x = 8
 		y = 5
 		cost = 2
+
 		search_filters = {
 			FOCUS_FILTER_CHI_INFLATION
 		}
-		prerequisite = { focus = MAN_podgotovitinfrastrukturudlyavmf  }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAN_imperial_navy_2
+				add_idea = MAN_imperial_navy_3
+			}
+		}
 	}
 
 	#Разработки новых короблей
 	focus = {
 		id = MAN_razrabotkinovyhkorobley
 		icon = GFX_goal_generic_amphibious_assault
-		x = 0
+		prerequisite = { focus = MAN_novyerazrabotkidlyavmf }
+		x = 6
 		y = 5
 		cost = 3
+
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = MAN_novyerazrabotkidlyavmf  }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
 	}
 
 	#Подготовить инфраструктуру для ВМФ
 	focus = {
 		id = MAN_podgotovitinfrastrukturudlyavmf
 		icon = GFX_focus_jap_strike_south
-		x = 2
+		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo }
+		x = 8
 		y = 3
 		cost = 6
+
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo  }
+
+		completion_reward = {
+			build_railway = {
+				path = { 11771 987 9781 11764 964 }
+			}
+			build_railway = {
+				path = { 11771 987 9781 11764 964 }
+			}
+		}
 	}
 
 	#Разработка доктрин воздушной войны
 	focus = {
 		id = MAN_razrabotkadoktrinvozdushnoyvoyny
 		icon = GFX_goal_generic_air_doctrine
-		x = 11
+		prerequisite = { focus = MAN_proizvodstvoistrebiteleyibombardirovshchikov  focus = MAN_stavkanapodderzhkunazemnyhsil } prerequisite = { focus = MAN_stavkanapodderzhkuvmf }
+		x = 17
 		y = 7
 		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = MAN_proizvodstvoistrebiteleyibombardirovshchikov  focus = MAN_stavkanapodderzhkunazemnyhsil  } prerequisite = { focus = MAN_stavkanapodderzhkuvmf  }
+
+		completion_reward = {
+			air_experience = 30
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.75
+				uses = 2
+				category = air_doctrine
+			}
+			swap_ideas = {
+				remove_idea = MAN_imperial_air_force_5
+				add_idea = MAN_imperial_air_force_6
+			}
+		}
 	}
 
 	#Разработка морских доктрин войны
 	focus = {
 		id = MAN_razrabotkamorskihdoktrinvoyny
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		x = 1
+		prerequisite = { focus = MAN_stroitelstvonovogoflotamanchzhougo }
+		x = 7
 		y = 7
 		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = MAN_stroitelstvonovogoflotamanchzhougo  }
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+			navy_experience = 30
+			swap_ideas = {
+				remove_idea = MAN_imperial_navy_4
+				add_idea = MAN_imperial_navy_5
+			}
+		}
 	}
 
 	#Строительство авиабаз
 	focus = {
 		id = MAN_stroitelstvoaviabaz
 		icon = GFX_goal_generic_air_production
-		x = 11
+		prerequisite = { focus = MAN_razrabotkasvoihistrebiteleynaosnoveyaponskih }
+		x = 17
 		y = 4
 		cost = 3
+
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		prerequisite = { focus = MAN_razrabotkasvoihistrebiteleynaosnoveyaponskih  }
+
+		completion_reward = {
+			714 = {
+				add_building_construction = {
+					type = air_base
+					level = 5
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	#Созыв совета по решению внутренних проблем в стране
 	focus = {
 		id = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane
 		icon = GFX_focus_jap_manchurian_project
-		x = 13
+		x = 19
 		y = 0
 		cost = 2
+
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
+		}
+		
+        completion_reward = {
+			add_political_power = 120
 		}
 	}
 
@@ -181,7 +276,7 @@ focus_tree = {
 	focus = {
 		id = MAN_voprospromyshlennost
 		icon = GFX_focus_generic_industry_2
-		x = 25
+		x = 31
 		y = 1
 		cost = 2
 		search_filters = {
@@ -194,7 +289,7 @@ focus_tree = {
 	focus = {
 		id = MAN_reorganizaciyanazemnyhsil
 		icon = GFX_focus_generic_manpower
-		x = 6
+		x = 12
 		y = 2
 		cost = 2
 		search_filters = {
@@ -207,7 +302,7 @@ focus_tree = {
 	focus = {
 		id = MAN_integraciyakvantunskoyarmii
 		icon = GFX_goal_generic_small_arms
-		x = 4
+		x = 10
 		y = 3
 		cost = 4
 		search_filters = {
@@ -221,7 +316,7 @@ focus_tree = {
 	focus = {
 		id = MAN_sozdanieimperatorskoyarmii
 		icon = GFX_MAN_sozdanieimperatorskoyarmii-262057
-		x = 6
+		x = 12
 		y = 4
 		cost = 4
 		search_filters = {
@@ -234,7 +329,7 @@ focus_tree = {
 	focus = {
 		id = MAN_multinacionalnayaarmiyamanchzhougo
 		icon = GFX_focus_secret_rearmament
-		x = 8
+		x = 14
 		y = 3
 		cost = 4
 		search_filters = {
@@ -247,59 +342,108 @@ focus_tree = {
 	focus = {
 		id = MAN_voprosvooruzhyonnyhsil
 		icon = GFX_focus_generic_combined_arms
-		x = 6
+		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
+		x = 12
 		y = 1
 		cost = 2
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
+
+		completion_reward = {
+			army_experience = 15
+			air_experience = 15
+			navy_experience = 15
+			add_ideas = MAN_a_scattered_army
+			add_ideas = MAN_imperial_air_force
+			add_ideas = MAN_imperial_navy
+		}
 	}
 
 	#Новая эра в морском флоте Маньчжоу-го
 	focus = {
 		id = MAN_novayaeravmorskomflotemanchzhougo
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 1
+		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
+		x = 7
 		y = 2
 		cost = 2
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = uk_waves_focus
+				cost_reduction = 0.25
+				uses = 1
+				category = naval_doctrine
+			}
+			610 = {
+			    add_building_construction = {
+				    type = naval_base
+				    level = 1
+				    instant_build = yes
+				    province = 11886
+				}
+			}
+			swap_ideas = {
+				remove_idea = MAN_imperial_navy
+				add_idea = MAN_imperial_navy_2
+			}
+		}
 	}
 
 	#Солнце всё ближе к нам
 	focus = {
 		id = MAN_solncevsyoblizheknam
 		icon = GFX_goal_generic_build_airforce
-		x = 10
+		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil }
+		x = 16
 		y = 2
 		cost = 2
+
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAN_imperial_air_force
+				add_idea = MAN_imperial_air_force_2
+			}
+		}
 	}
 
 	#Новые разработки для ВМФ
 	focus = {
 		id = MAN_novyerazrabotkidlyavmf
 		icon = GFX_MAN_novyerazrabotkidlyavmf-411
-		x = 0
+		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo  }
+		x = 6
 		y = 3
 		cost = 4
+
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo  }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
 	}
 
 	#Всеобщие государственные армейские учения
 	focus = {
 		id = MAN_vseobshchiegosudarstvennyearmeyskieucheniya
 		icon = GFX_focus_generic_little_entente
-		x = 8
+		x = 14
 		y = 4
 		cost = 1
 		search_filters = {
@@ -312,7 +456,7 @@ focus_tree = {
 	focus = {
 		id = MAN_priglasitarmeyskihspecialistovizyaponii
 		icon = GFX_focus_generic_military_academy
-		x = 4
+		x = 10
 		y = 4
 		cost = 3
 		search_filters = {
@@ -325,7 +469,7 @@ focus_tree = {
 	focus = {
 		id = MAN_sobstvennyearmeyskiestandarty
 		icon = GFX_goal_generic_small_arms
-		x = 8
+		x = 14
 		y = 5
 		cost = 2
 		search_filters = {
@@ -338,7 +482,7 @@ focus_tree = {
 	focus = {
 		id = MAN_podognatstandartnyarmiipodyaponskie
 		icon = GFX_goal_generic_political_pressure
-		x = 4
+		x = 10
 		y = 5
 		cost = 3
 		search_filters = {
@@ -351,7 +495,7 @@ focus_tree = {
 	focus = {
 		id = MAN_shchitaimperatora
 		icon = GFX_focus_generic_home_defense
-		x = 6
+		x = 12
 		y = 5
 		cost = 4
 		search_filters = {
@@ -364,7 +508,7 @@ focus_tree = {
 	focus = {
 		id = MAN_gvardeyskiedivizii
 		icon = GFX_focus_chi_army_reform
-		x = 6
+		x = 12
 		y = 6
 		cost = 2
 		search_filters = {
@@ -377,60 +521,136 @@ focus_tree = {
 	focus = {
 		id = MAN_razrabotkasvoihistrebiteleynaosnoveyaponskih
 		icon = GFX_focus_research
-		x = 10
+		prerequisite = { focus = MAN_solncevsyoblizheknam }
+		x = 16
 		y = 3
 		cost = 4
+
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = MAN_solncevsyoblizheknam  }
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = light_fighter
+			}
+			add_equipment_to_stockpile = { 
+				type = small_plane_airframe_1
+				amount = 200
+				producer = JAP
+			}
+		}
 	}
 
 	#Производство истребителей и бомбардировщиков
 	focus = {
 		id = MAN_proizvodstvoistrebiteleyibombardirovshchikov
 		icon = GFX_goal_generic_air_fighter
-		x = 11
+		prerequisite = { focus = MAN_stroitelstvoaviabaz }
+		x = 17
 		y = 6
 		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
-		prerequisite = { focus = MAN_stroitelstvoaviabaz  }
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAN_imperial_air_force_4
+				add_idea = MAN_imperial_air_force_5
+			}
+		}
 	}
 
 	#Ставка на поддержку наземных сил
 	focus = {
 		id = MAN_stavkanapodderzhkunazemnyhsil
 		icon = GFX_goal_generic_air_naval_bomber
-		x = 10
+		prerequisite = { focus = MAN_stroitelstvoaviabaz }
+		x = 16
 		y = 5
 		cost = 4
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_stroitelstvoaviabaz  }
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = MAN_imperial_air_force_2
+						has_idea = MAN_imperial_air_force_4
+					}
+				}
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = MAN_imperial_air_force_2
+						add_idea = MAN_imperial_air_force_3
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = MAN_imperial_air_force_2
+				}
+				swap_ideas = {
+					remove_idea = MAN_imperial_air_force_2
+					add_idea = MAN_imperial_air_force_3
+				}
+			}
+		}
 	}
 
 	#Ставка на поддержку ВМФ
 	focus = {
 		id = MAN_stavkanapodderzhkuvmf
 		icon = GFX_focus_usa_escort_fighters
-		x = 12
+		prerequisite = { focus = MAN_stroitelstvoaviabaz }
+		mutually_exclusive = { focus = MAN_stavkanapodderzhkunazemnyhsil }
+		x = 18
 		y = 5
 		cost = 4
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_stroitelstvoaviabaz  }
-		mutually_exclusive = { focus = MAN_stavkanapodderzhkunazemnyhsil  }
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = MAN_imperial_air_force_2
+						has_idea = MAN_imperial_air_force_4
+					}
+				}
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = MAN_imperial_air_force_2
+						add_idea = MAN_imperial_air_force_4
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_idea = MAN_imperial_air_force_3
+				}
+				swap_ideas = {
+					remove_idea = MAN_imperial_air_force_3
+					add_idea = MAN_imperial_air_force_4
+				}
+			}
+		}
 	}
 
 	#Разработка армейских доктрин войны
 	focus = {
 		id = MAN_razrabotkaarmeyskihdoktrinvoyny
 		icon = GFX_goal_generic_army_doctrines
-		x = 6
+		x = 12
 		y = 7
 		cost = 5
 		search_filters = {
@@ -443,7 +663,7 @@ focus_tree = {
 	focus = {
 		id = MAN_imperskievooruzhyonnyesily
 		icon = GFX_focus_generic_monarchy_2
-		x = 6
+		x = 12
 		y = 8
 		cost = 3
 		search_filters = {
@@ -456,7 +676,7 @@ focus_tree = {
 	focus = {
 		id = MAN_stavkanagrazhdanskiezavody
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 22
+		x = 28
 		y = 4
 		cost = 5
 		search_filters = {
@@ -469,7 +689,7 @@ focus_tree = {
 	focus = {
 		id = MAN_raznyevzglyadynocelodna
 		icon = GFX_focus_spr_masters_of_our_own_fate
-		x = 14
+		x = 20
 		y = 2
 		cost = 1
 		search_filters = {
@@ -482,7 +702,7 @@ focus_tree = {
 	focus = {
 		id = MAN_uvelichitinvestirovaniyaotyaponii
 		icon = GFX_focus_chi_collaboration_with_the_japanese
-		x = 22
+		x = 28
 		y = 2
 		cost = 3
 		search_filters = {
@@ -495,7 +715,7 @@ focus_tree = {
 	focus = {
 		id = MAN_uvelichitinvestirovaniyaotvelikobritanii
 		icon = GFX_focus_chi_british_cooperation
-		x = 24
+		x = 30
 		y = 2
 		cost = 3
 		search_filters = {
@@ -508,7 +728,7 @@ focus_tree = {
 	focus = {
 		id = MAN_uvelichitinvestirovaniyaotssha
 		icon = GFX_focus_chi_mission_to_the_us
-		x = 25
+		x = 31
 		y = 3
 		cost = 3
 		search_filters = {
@@ -521,7 +741,7 @@ focus_tree = {
 	focus = {
 		id = MAN_uvelichitinvestirovaniyaotfrancii
 		icon = GFX_focus_chi_reach_out_to_france
-		x = 26
+		x = 32
 		y = 2
 		cost = 3
 		search_filters = {
@@ -547,7 +767,7 @@ focus_tree = {
 	focus = {
 		id = MAN_chastnyebelyeinvestory
 		icon = GFX_goal_generic_improve_relations
-		x = 27
+		x = 33
 		y = 3
 		cost = 3
 		search_filters = {
@@ -560,7 +780,7 @@ focus_tree = {
 	focus = {
 		id = MAN_investirovaniyaotsssr
 		icon = GFX_focus_chi_mission_to_the_soviet_union
-		x = 28
+		x = 34
 		y = 2
 		cost = 3
 		search_filters = {
@@ -624,7 +844,7 @@ focus_tree = {
 	focus = {
 		id = MAN_stavkanalyogkuyupromyshlennost
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 25
+		x = 31
 		y = 4
 		cost = 5
 		search_filters = {
@@ -637,7 +857,7 @@ focus_tree = {
 	focus = {
 		id = MAN_stavkanatyazheluyupromyshlennost
 		icon = GFX_MAN_stavkanatyazheluyupromyshlennost-262080
-		x = 27
+		x = 33
 		y = 4
 		cost = 5
 		search_filters = {
@@ -651,7 +871,7 @@ focus_tree = {
 	focus = {
 		id = MAN_novyezavodyvstolice
 		icon = GFX_goal_generic_construct_civilian
-		x = 21
+		x = 27
 		y = 5
 		cost = 5
 		search_filters = {
@@ -664,7 +884,7 @@ focus_tree = {
 	focus = {
 		id = MAN_novyydorogiizstolicy
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 22
+		x = 28
 		y = 6
 		cost = 3
 		search_filters = {
@@ -677,7 +897,7 @@ focus_tree = {
 	focus = {
 		id = MAN_novyyzavodyvregionah
 		icon = GFX_goal_generic_construction
-		x = 20
+		x = 26
 		y = 6
 		cost = 5
 		search_filters = {
@@ -690,7 +910,7 @@ focus_tree = {
 	focus = {
 		id = MAN_rasshiritprogrammupodderzhkilegkoypromyshlennosti
 		icon = GFX_goal_generic_construction2
-		x = 25
+		x = 31
 		y = 5
 		cost = 5
 		search_filters = {
@@ -703,7 +923,7 @@ focus_tree = {
 	focus = {
 		id = MAN_programmamodernizaciizavodovtyazhyoloypromyshlennosti
 		icon = GFX_MAN_programmamodernizaciizavodovtyazhyoloypromyshlennosti-446
-		x = 27
+		x = 33
 		y = 5
 		cost = 7
 		search_filters = {
@@ -716,7 +936,7 @@ focus_tree = {
 	focus = {
 		id = MAN_stroitelstvostanciy
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 25
+		x = 31
 		y = 7
 		cost = 10
 		search_filters = {
@@ -729,7 +949,7 @@ focus_tree = {
 	focus = {
 		id = MAN_ekonomicheskiypodyom
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 23
+		x = 29
 		y = 5
 		cost = 9
 		search_filters = {
@@ -742,7 +962,7 @@ focus_tree = {
 	focus = {
 		id = MAN_zhdsvostokanazapad
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 26
+		x = 32
 		y = 6
 		cost = 6
 		search_filters = {
@@ -755,7 +975,7 @@ focus_tree = {
 	focus = {
 		id = MAN_gorynagranicestrany
 		icon = GFX_goal_generic_construct_military
-		x = 21
+		x = 27
 		y = 7
 		cost = 8
 		search_filters = {
@@ -768,7 +988,7 @@ focus_tree = {
 	focus = {
 		id = MAN_obezglavitzmeyu
 		icon = GFX_focus_spr_crush_the_revolution
-		x = 12
+		x = 18
 		y = 2
 		cost = 1
 		search_filters = {
@@ -1724,8 +1944,8 @@ focus_tree = {
 	focus = {
 		id = MAN_nachatdiplomaticheskoedavlenienastrany
 		icon = GFX_focus_eng_global_defense
-		x = 40
-		y = 2
+		x = 39
+		y = 25
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1736,8 +1956,8 @@ focus_tree = {
 	focus = {
 		id = MAN_obedinitkitay
 		icon = GFX_focus_chi_one_china_policy
-		x = 41
-		y = 4
+		x = 40
+		y = 27
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1749,8 +1969,8 @@ focus_tree = {
 	focus = {
 		id = MAN_vosstanovitvelikoyuimperiyucin
 		icon = GFX_focus_chi_one_china_policy
-		x = 39
-		y = 4
+		x = 38
+		y = 27
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1762,8 +1982,8 @@ focus_tree = {
 	focus = {
 		id = MAN_vozvratsebeindokitaya
 		icon = GFX_focus_chi_one_china_policy
-		x = 42
-		y = 3
+		x = 41
+		y = 26
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1775,8 +1995,8 @@ focus_tree = {
 	focus = {
 		id = MAN_interesyvindii
 		icon = GFX_focus_chi_one_china_policy
-		x = 43
-		y = 4
+		x = 42
+		y = 27
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1788,8 +2008,8 @@ focus_tree = {
 	focus = {
 		id = MAN_vozrashcheniekoreyskogopoluostrova
 		icon = GFX_focus_chi_one_china_policy
-		x = 38
-		y = 3
+		x = 37
+		y = 26
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1801,8 +2021,8 @@ focus_tree = {
 	focus = {
 		id = MAN_datkochevomunarodupostoyannyydom
 		icon = GFX_focus_chi_one_china_policy
-		x = 37
-		y = 4
+		x = 36
+		y = 27
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1814,8 +2034,8 @@ focus_tree = {
 	focus = {
 		id = MAN_vernutsinczyan
 		icon = GFX_focus_chi_one_china_policy
-		x = 36
-		y = 3
+		x = 35
+		y = 26
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1827,8 +2047,8 @@ focus_tree = {
 	focus = {
 		id = MAN_vozrashchenieterritoriykitayaokkupirovannyhyaponiey
 		icon = GFX_focus_chi_one_china_policy
-		x = 40
-		y = 3
+		x = 39
+		y = 26
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -1840,8 +2060,8 @@ focus_tree = {
 	focus = {
 		id = MAN_territoriidalnegovostoka
 		icon = GFX_focus_chi_one_china_policy
-		x = 44
-		y = 3
+		x = 43
+		y = 26
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -2431,7 +2651,7 @@ focus_tree = {
 	focus = {
 		id = MAN_mukdenskiyarsenaligrovoyfokus
 		icon = GFX_goal_unknown
-		x = 20
+		x = 26
 		y = 3
 		cost = 10
 		search_filters = {
@@ -2444,7 +2664,7 @@ focus_tree = {
 	focus = {
 		id = MAN_manchzhurskoeaviastroenieigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 20
+		x = 26
 		y = 4
 		cost = 10
 		search_filters = {
@@ -2457,7 +2677,7 @@ focus_tree = {
 	focus = {
 		id = MAN_metallurgicheskiykombinatsyovaigroyfokus
 		icon = GFX_goal_unknown
-		x = 18
+		x = 24
 		y = 4
 		cost = 10
 		search_filters = {
@@ -2470,7 +2690,7 @@ focus_tree = {
 	focus = {
 		id = MAN_razrabotkaalyuminiyaigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 18
+		x = 24
 		y = 3
 		cost = 10
 		search_filters = {
@@ -2483,7 +2703,7 @@ focus_tree = {
 	focus = {
 		id = MAN_rasshireniesetizhdigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 16
+		x = 22
 		y = 3
 		cost = 10
 		search_filters = {
@@ -2496,7 +2716,7 @@ focus_tree = {
 	focus = {
 		id = MAN_otdelsocialnyhissledovaniyigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 16
+		x = 22
 		y = 4
 		cost = 10
 		search_filters = {
@@ -2509,7 +2729,7 @@ focus_tree = {
 	focus = {
 		id = MAN_rezhimnacionalnoyoboronyigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 18
+		x = 24
 		y = 6
 		cost = 10
 		search_filters = {
@@ -2522,7 +2742,7 @@ focus_tree = {
 	focus = {
 		id = MAN_privlechyaponskihinvestorovigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 18
+		x = 24
 		y = 1
 		cost = 10
 		search_filters = {
@@ -2536,7 +2756,7 @@ focus_tree = {
 	focus = {
 		id = MAN_pyatiletniyplanigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 18
+		x = 24
 		y = 2
 		cost = 10
 		search_filters = {
@@ -2549,7 +2769,7 @@ focus_tree = {
 	focus = {
 		id = MAN_sleduyushchiypyatiletniyplanigrovoyfokus
 		icon = GFX_goal_unknown
-		x = 18
+		x = 24
 		y = 5
 		cost = 10
 		search_filters = {

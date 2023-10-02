@@ -31,8 +31,12 @@ if = {
 	recruit_character = MAN_songgotu_zhanshan
 }
 
-add_ideas = MAN_zhang_jinghui
-add_ideas = MAN_zang_shiyi
+add_ideas = MAN_kwantung_army
+
+add_ideas = {
+	MAN_zhang_jinghui
+    MAN_zang_shiyi
+}
 
 recruit_character = MAN_aisin_gioro_puyi
 recruit_character = MAN_zhang_haipeng
