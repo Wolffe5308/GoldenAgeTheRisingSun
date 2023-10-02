@@ -1,4 +1,5 @@
 ﻿l_russian:
+#Мензян
 MEN_prince_demchugdongrub:0 "Принц Дэмчигдонров"
 MEN_ulanhu:0 "Уланьфу"
 MEN_li_shouxin:0 "Ли Шоусинь"
@@ -12,3 +13,14 @@ MEN_jodbajab:0 "Джодбаджаб"
 MEN_yondonwangchug:0 "Ёндонванчуг"
 MEN_jin_yongchang:0 "Цзинь Юнчан"
 MEN_serengdongrub:0 "Сэрэндонров"
+#Маньчжоу-Го
+MAN_yang_jingyu:0 "Ян Цзинъюй"
+MAN_yu_zhishan:0 "Юй Чжишань"
+MAN_xie_jieshi:0 "Се Цзеши"
+MAN_zang_shiyi:0 "Цзан Шии"
+MAN_yoshisuke_aikawa:0 "Ёсисукэ Аюкава"
+MAN_naoki_hoshino:0 "Наоки Хошино"
+MAN_lu_ronghuan:0 "Лу Ронхуань"
+MAN_urzhin_garmaev:0 "Уржин Гармаев"
+MAN_kenkichi_ueda:0:0 "Кэнкити Уэда"
+MAN_seishiro_itagaki:0 "Сэйсиро Итагаки"

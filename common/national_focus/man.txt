@@ -203,9 +203,9 @@ focus_tree = {
 		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
 	}
 
-	#Интеграция Квантунской арми
+	#Интеграция Квантунской армии
 	focus = {
-		id = MAN_integraciyakvantunskoyarmi
+		id = MAN_integraciyakvantunskoyarmii
 		icon = GFX_goal_generic_small_arms
 		x = 4
 		y = 3
@@ -318,7 +318,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_integraciyakvantunskoyarmi  }
+		prerequisite = { focus = MAN_integraciyakvantunskoyarmii  }
 	}
 
 	#Собственные армейские стандарты
@@ -712,9 +712,9 @@ focus_tree = {
 		prerequisite = { focus = MAN_stavkanatyazheluyupromyshlennost  }
 	}
 
-	#Строительство стаций
+	#Строительство станций
 	focus = {
-		id = MAN_stroitelstvostaciy
+		id = MAN_stroitelstvostanciy
 		icon = GFX_goal_generic_positive_trade_relations
 		x = 25
 		y = 7
@@ -2550,7 +2550,7 @@ focus_tree = {
 		id = MAN_sleduyushchiypyatiletniyplanigrovoyfokus
 		icon = GFX_goal_unknown
 		x = 18
-		y = 4
+		y = 5
 		cost = 10
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
