@@ -47,17 +47,41 @@ focus_tree = {
 		prerequisite = { focus = MAN_ubratyaponskuyuugrozunakontinente  }
 	}
 
+	focus = {
+		id = MAN_pacify_the_countrysid
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane }
+		x = 19
+		y = 1
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			unlock_decision_category_tooltip = MAN_banditry_category
+			set_variable = { MAN_maintain_control_timer = 180 }
+			custom_effect_tooltip = MAN_pacify_the_countryside_effect_tooltip
+		}
+	}
+
 	#Подготовка к войне с партизанами
 	focus = {
 		id = MAN_podgotovkakvoynespartizanami
 		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = MAN_pacify_the_countrysid }
 		x = 19
-		y = 1
+		y = 2
 		cost = 2
 		search_filters = {
 			FOCUS_FILTER_STABILITY
 		}
-		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
 	}
 
 	#Залечь на дно и ожидать приказа
@@ -78,16 +102,18 @@ focus_tree = {
 	focus = {
 		id = MAN_stroitelstvonovogoflotamanchzhougo
 		icon = GFX_MAN_stroitelstvonovogoflotamanchzhougo-262058
-		prerequisite = { focus = MAN_razrabotkinovyhkorobley  focus = MAN_modernizaciyakorabley  }
+		prerequisite = { focus = MAN_razrabotkinovyhkorobley } 
+		prerequisite = { focus = MAN_modernizaciyakorabley }
 		x = 7
 		y = 6
-		cost = 10
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_stroitelstvonovogoflotamanchzhougo"
 			716 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -118,13 +144,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_podgotovitinfrastrukturudlyavmf }
 		x = 8
 		y = 5
-		cost = 2
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_CHI_INFLATION
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_modernizaciyakorabley"
 			swap_ideas = {
 				remove_idea = MAN_imperial_navy_2
 				add_idea = MAN_imperial_navy_3
@@ -139,13 +166,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_novyerazrabotkidlyavmf }
 		x = 6
 		y = 5
-		cost = 3
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_razrabotkinovyhkorobley"
 			add_tech_bonus = {
 				bonus = 1.0
 				uses = 1
@@ -161,13 +189,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo }
 		x = 8
 		y = 3
-		cost = 6
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_podgotovitinfrastrukturudlyavmf"
 			build_railway = {
 				path = { 11771 987 9781 11764 964 }
 			}
@@ -181,7 +210,7 @@ focus_tree = {
 	focus = {
 		id = MAN_razrabotkadoktrinvozdushnoyvoyny
 		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = MAN_proizvodstvoistrebiteleyibombardirovshchikov  focus = MAN_stavkanapodderzhkunazemnyhsil } prerequisite = { focus = MAN_stavkanapodderzhkuvmf }
+		prerequisite = { focus = MAN_proizvodstvoistrebiteleyibombardirovshchikov }
 		x = 17
 		y = 7
 		cost = 5
@@ -191,6 +220,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_razrabotkadoktrinvozdushnoyvoyny"
 			air_experience = 30
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.75
@@ -218,6 +248,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_razrabotkamorskihdoktrinvoyny"
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 2
@@ -238,13 +269,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_razrabotkasvoihistrebiteleynaosnoveyaponskih }
 		x = 17
 		y = 4
-		cost = 3
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_stroitelstvoaviabaz"
 			714 = {
 				add_building_construction = {
 					type = air_base
@@ -261,13 +293,14 @@ focus_tree = {
 		icon = GFX_focus_jap_manchurian_project
 		x = 19
 		y = 0
-		cost = 2
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		
         completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane"
 			add_political_power = 120
 		}
 	}
@@ -276,6 +309,8 @@ focus_tree = {
 	focus = {
 		id = MAN_voprospromyshlennost
 		icon = GFX_focus_generic_industry_2
+
+		mutually_exclusive = { focus = MAN_invite_japanese_investor }
 		x = 31
 		y = 1
 		cost = 2
@@ -289,53 +324,138 @@ focus_tree = {
 	focus = {
 		id = MAN_reorganizaciyanazemnyhsil
 		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil }
 		x = 12
 		y = 2
-		cost = 2
+		cost = 10
+
 		search_filters = {
 			FOCUS_FILTER_USA_CONGRESS
 		}
-		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_reorganizaciyanazemnyhsil"
+			swap_ideas = {
+				remove_idea = MAN_a_scattered_army
+				add_idea = MAN_a_scattered_army_2
+			}
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.25
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
 	}
 
 	#Интеграция Квантунской армии
 	focus = {
 		id = MAN_integraciyakvantunskoyarmii
 		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil }
+		mutually_exclusive = { focus = MAN_multinacionalnayaarmiyamanchzhougo }
 		x = 10
 		y = 3
-		cost = 4
+		cost = 10
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil  }
-		mutually_exclusive = { focus = MAN_multinacionalnayaarmiyamanchzhougo  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_integraciyakvantunskoyarmii"
+			swap_ideas = {
+				remove_idea = MAN_kwantung_army
+				add_idea = MAN_kwantung_army_2
+			}
+			division_template = {
+				name = "Kwantung Army"
+				priority = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+		
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+
+                    infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+
+					infantry = { x = 3 y = 0 }
+					infantry = { x = 3 y = 1 }
+					infantry = { x = 3 y = 2 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+			328 = {
+				limit = { PREV = { has_full_control_of_state = PREV } }
+				create_unit = {
+					division = "name = \"Kwantung Division\" division_template = \"Kwantung Army\" start_experience_factor = 0.05" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"Kwantung Division\" division_template = \"Kwantung Army\" start_experience_factor = 0.05" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"Kwantung Division\" division_template = \"Kwantung Army\" start_experience_factor = 0.05" 
+					owner = MAN
+				}
+			}
+		}
 	}
 
 	#Создание императорской армии
 	focus = {
 		id = MAN_sozdanieimperatorskoyarmii
 		icon = GFX_MAN_sozdanieimperatorskoyarmii-262057
+		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil }
 		x = 12
 		y = 4
-		cost = 4
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_MANPOWER
 		}
-		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_integraciyakvantunskoyarmii"
+			swap_ideas = {
+				remove_idea = MAN_a_scattered_army_2
+				add_idea = MAN_imperial_army
+			}
+		}
 	}
 
 	#Мульти национальная армия Маньчжоу-го
 	focus = {
 		id = MAN_multinacionalnayaarmiyamanchzhougo
 		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil }
 		x = 14
 		y = 3
-		cost = 4
+		cost = 10
+
 		search_filters = {
 			FOCUS_FILTER_MANPOWER
 		}
-		prerequisite = { focus = MAN_reorganizaciyanazemnyhsil  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_multinacionalnayaarmiyamanchzhougo"
+			add_ideas = MAN_manchurian_army
+		}
 	}
 
 	#Вопрос вооружённых сил
@@ -345,13 +465,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
 		x = 12
 		y = 1
-		cost = 2
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_voprosvooruzhyonnyhsil"
 			army_experience = 15
 			air_experience = 15
 			navy_experience = 15
@@ -368,13 +489,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil  }
 		x = 7
 		y = 2
-		cost = 2
+		cost = 10
 
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_novayaeravmorskomflotemanchzhougo"
 			add_doctrine_cost_reduction = {
 				name = uk_waves_focus
 				cost_reduction = 0.25
@@ -403,13 +525,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_voprosvooruzhyonnyhsil }
 		x = 16
 		y = 2
-		cost = 2
+		cost = 10
 
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_solncevsyoblizheknam"
 			swap_ideas = {
 				remove_idea = MAN_imperial_air_force
 				add_idea = MAN_imperial_air_force_2
@@ -424,13 +547,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_novayaeravmorskomflotemanchzhougo  }
 		x = 6
 		y = 3
-		cost = 4
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_novyerazrabotkidlyavmf"
 			add_tech_bonus = {
 				bonus = 1.0
 				uses = 1
@@ -443,78 +567,182 @@ focus_tree = {
 	focus = {
 		id = MAN_vseobshchiegosudarstvennyearmeyskieucheniya
 		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = MAN_multinacionalnayaarmiyamanchzhougo }
 		x = 14
 		y = 4
-		cost = 1
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_multinacionalnayaarmiyamanchzhougo  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_vseobshchiegosudarstvennyearmeyskieucheniya"
+			swap_ideas = {
+				remove_idea = MAN_manchurian_army
+				add_idea = MAN_manchurian_army_2
+			}
+		}
 	}
 
 	#Пригласить армейских специалистов из Японии
 	focus = {
 		id = MAN_priglasitarmeyskihspecialistovizyaponii
 		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = MAN_integraciyakvantunskoyarmii }
 		x = 10
 		y = 4
-		cost = 3
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_integraciyakvantunskoyarmii  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_priglasitarmeyskihspecialistovizyaponii"
+			swap_ideas = {
+				remove_idea = MAN_kwantung_army_2
+				add_idea = MAN_kwantung_army_3
+			}
+            MAN_kenkichi_ueda = {
+				add_corps_commander_role = {
+					traits = { infantry_officer politically_connected }
+					skill = 3
+					attack_skill = 3
+					defense_skill = 1
+					planning_skill = 2
+					logistics_skill = 3
+				}
+			}
+			MAN_seishiro_itagaki = {
+				add_corps_commander_role = {
+					traits = { infantry_officer politically_connected }
+					skill = 2
+					attack_skill = 2
+					defense_skill = 1
+					planning_skill = 3
+					logistics_skill = 2
+				}
+			}
+		}
 	}
 
 	#Собственные армейские стандарты
 	focus = {
 		id = MAN_sobstvennyearmeyskiestandarty
 		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = MAN_vseobshchiegosudarstvennyearmeyskieucheniya }
 		x = 14
 		y = 5
-		cost = 2
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_STABILITY
 		}
-		prerequisite = { focus = MAN_vseobshchiegosudarstvennyearmeyskieucheniya  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_sobstvennyearmeyskiestandarty"
+			swap_ideas = {
+				remove_idea = MAN_manchurian_army_2
+				add_idea = MAN_manchurian_army_3
+			}
+		}
 	}
 
 	#Подогнать стандартны армии под японские
 	focus = {
 		id = MAN_podognatstandartnyarmiipodyaponskie
 		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = MAN_priglasitarmeyskihspecialistovizyaponii }
 		x = 10
 		y = 5
-		cost = 3
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_priglasitarmeyskihspecialistovizyaponii  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_podognatstandartnyarmiipodyaponskie"
+			swap_ideas = {
+				remove_idea = MAN_kwantung_army_3
+				add_idea = MAN_kwantung_army_4
+			}
+		}
 	}
 
 	#Щита императора
 	focus = {
 		id = MAN_shchitaimperatora
 		icon = GFX_focus_generic_home_defense
+		prerequisite = { focus = MAN_sozdanieimperatorskoyarmii  }
 		x = 12
 		y = 5
-		cost = 4
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_STABILITY
 		}
-		prerequisite = { focus = MAN_sozdanieimperatorskoyarmii  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_shchitaimperatora"
+			swap_ideas = {
+				remove_idea = MAN_imperial_army
+				add_idea = MAN_imperial_army_2
+			}
+		}
 	}
 
 	#Гвардейские дивизии
 	focus = {
 		id = MAN_gvardeyskiedivizii
 		icon = GFX_focus_chi_army_reform
+		prerequisite = { focus = MAN_shchitaimperatora  focus = MAN_podognatstandartnyarmiipodyaponskie focus = MAN_sobstvennyearmeyskiestandarty }
 		x = 12
 		y = 6
-		cost = 2
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
-		prerequisite = { focus = MAN_shchitaimperatora  focus = MAN_podognatstandartnyarmiipodyaponskie  } prerequisite = { focus = MAN_sobstvennyearmeyskiestandarty  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_shchitaimperatora"
+			swap_ideas = {
+				remove_idea = MAN_imperial_army_2
+				add_idea = MAN_imperial_army_3
+			}
+			division_template = {
+				name = "Guard Divison"
+				priority = 1
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+		            infantry = { x = 0 y = 3 }
+
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+                    infantry = { x = 1 y = 3 }
+					artillery = { x = 1 y = 4 }
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+					recon = { x = 0 y = 1 }
+				}
+			}
+			328 = {
+				limit = { PREV = { has_full_control_of_state = PREV } }
+				create_unit = {
+					division = "name = \"Imperial Division\" division_template = \"Guard Divison\" start_experience_factor = 0.05" 
+					owner = MAN
+				}
+				create_unit = {
+					division = "name = \"Imperial Division\" division_template = \"Guard Divison\" start_experience_factor = 0.05" 
+					owner = MAN
+				}
+			}
+		}
 	}
 
 	#Разработка своих истребителей на основе японских
@@ -524,13 +752,14 @@ focus_tree = {
 		prerequisite = { focus = MAN_solncevsyoblizheknam }
 		x = 16
 		y = 3
-		cost = 4
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_razrabotkasvoihistrebiteleynaosnoveyaponskih"
 			add_tech_bonus = {
 				bonus = 0.5
 				uses = 1
@@ -548,7 +777,7 @@ focus_tree = {
 	focus = {
 		id = MAN_proizvodstvoistrebiteleyibombardirovshchikov
 		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = MAN_stroitelstvoaviabaz }
+		prerequisite = { focus = MAN_stavkanapodderzhkunazemnyhsil focus = MAN_stavkanapodderzhkuvmf }
 		x = 17
 		y = 6
 		cost = 5
@@ -558,9 +787,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = MAN_imperial_air_force_4
-				add_idea = MAN_imperial_air_force_5
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_proizvodstvoistrebiteleyibombardirovshchikov"
+			if = {
+				limit = {
+					has_idea = MAN_imperial_air_force_3
+				}
+				swap_ideas = {
+					remove_idea = MAN_imperial_air_force_3
+					add_idea = MAN_imperial_air_force_5
+				}
+			}
+			if = {
+				limit = {
+					has_idea = MAN_imperial_air_force_4
+				}
+				swap_ideas = {
+					remove_idea = MAN_imperial_air_force_4
+					add_idea = MAN_imperial_air_force_5
+				}
 			}
 		}
 	}
@@ -570,15 +814,17 @@ focus_tree = {
 		id = MAN_stavkanapodderzhkunazemnyhsil
 		icon = GFX_goal_generic_air_naval_bomber
 		prerequisite = { focus = MAN_stroitelstvoaviabaz }
+		mutually_exclusive = { focus = MAN_stavkanapodderzhkuvmf }
 		x = 16
 		y = 5
-		cost = 4
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_stavkanapodderzhkunazemnyhsil"
 			if = {
 				limit = {
 					NOT = {
@@ -613,17 +859,18 @@ focus_tree = {
 		mutually_exclusive = { focus = MAN_stavkanapodderzhkunazemnyhsil }
 		x = 18
 		y = 5
-		cost = 4
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_WAR_SUPPORT
 		}
 
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_stavkanapodderzhkuvmf"
 			if = {
 				limit = {
 					NOT = {
-						has_idea = MAN_imperial_air_force_2
+						has_idea = MAN_imperial_air_force_3
 						has_idea = MAN_imperial_air_force_4
 					}
 				}
@@ -650,26 +897,62 @@ focus_tree = {
 	focus = {
 		id = MAN_razrabotkaarmeyskihdoktrinvoyny
 		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MAN_gvardeyskiedivizii }
 		x = 12
 		y = 7
 		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
-		prerequisite = { focus = MAN_gvardeyskiedivizii  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_razrabotkaarmeyskihdoktrinvoyny"
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 0.3
+				uses = 3
+				category = infantry_weapons
+				category = artillery
+			}
+		}
 	}
 
 	#Имперские вооружённые силы
 	focus = {
 		id = MAN_imperskievooruzhyonnyesily
 		icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = MAN_razrabotkadoktrinvozdushnoyvoyny }
+		prerequisite = { focus = MAN_razrabotkamorskihdoktrinvoyny }
+		prerequisite = { focus = MAN_razrabotkaarmeyskihdoktrinvoyny }
 		x = 12
 		y = 8
-		cost = 3
+		cost = 5
+
 		search_filters = {
 			FOCUS_FILTER_STABILITY
 		}
-		prerequisite = { focus = MAN_razrabotkadoktrinvozdushnoyvoyny  focus = MAN_razrabotkamorskihdoktrinvoyny  focus = MAN_razrabotkadoktrinvozdushnoyvoyny  }
+
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus MAN_imperskievooruzhyonnyesily"
+			show_unit_leaders_tooltip = MAN_aisin_gioro_puyi
+			MAN_aisin_gioro_puyi = {
+				add_field_marshal_role = {
+					traits = { politically_connected media_personality }
+					skill = 3
+					attack_skill = 3
+					defense_skill = 3
+					planning_skill = 1
+					logistics_skill = 1
+				}
+			}
+		}
 	}
 
 	#Ставка на гражданские заводы
@@ -690,7 +973,7 @@ focus_tree = {
 		id = MAN_raznyevzglyadynocelodna
 		icon = GFX_focus_spr_masters_of_our_own_fate
 		x = 20
-		y = 2
+		y = 3
 		cost = 1
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -989,7 +1272,7 @@ focus_tree = {
 		id = MAN_obezglavitzmeyu
 		icon = GFX_focus_spr_crush_the_revolution
 		x = 18
-		y = 2
+		y = 3
 		cost = 1
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -2647,135 +2930,579 @@ focus_tree = {
 		prerequisite = { focus = MAN_vosstanovitprussiyuiveymarskuyurespubliku  }
 	}
 
-	#Мукденский арсенал (игровой фокус)
 	focus = {
-		id = MAN_mukdenskiyarsenaligrovoyfokus
-		icon = GFX_goal_unknown
-		x = 26
-		y = 3
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = MAN_pyatiletniyplanigrovoyfokus  }
-	}
-
-	#Маньчжурское авиастроение (игровой фокус)
-	focus = {
-		id = MAN_manchzhurskoeaviastroenieigrovoyfokus
-		icon = GFX_goal_unknown
-		x = 26
-		y = 4
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = MAN_mukdenskiyarsenaligrovoyfokus  }
-	}
-
-	#Металлургический комбинат Сёва (игрой фокус)
-	focus = {
-		id = MAN_metallurgicheskiykombinatsyovaigroyfokus
-		icon = GFX_goal_unknown
-		x = 24
-		y = 4
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = MAN_razrabotkaalyuminiyaigrovoyfokus  }
-	}
-
-	#Разработка алюминия (игровой фокус)
-	focus = {
-		id = MAN_razrabotkaalyuminiyaigrovoyfokus
-		icon = GFX_goal_unknown
-		x = 24
-		y = 3
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = MAN_pyatiletniyplanigrovoyfokus  }
-	}
-
-	#Расширение сети ж/д (игровой фокус)
-	focus = {
-		id = MAN_rasshireniesetizhdigrovoyfokus
-		icon = GFX_goal_unknown
-		x = 22
-		y = 3
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = MAN_pyatiletniyplanigrovoyfokus  }
-	}
-
-	#Отдел социальных исследований (игровой фокус)
-	focus = {
-		id = MAN_otdelsocialnyhissledovaniyigrovoyfokus
-		icon = GFX_goal_unknown
-		x = 22
-		y = 4
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = MAN_rasshireniesetizhdigrovoyfokus  }
-	}
-
-	#Режим национальной обороны (игровой фокус)
-	focus = {
-		id = MAN_rezhimnacionalnoyoboronyigrovoyfokus
-		icon = GFX_goal_unknown
-		x = 24
-		y = 6
-		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
-		}
-		prerequisite = { focus = MAN_manchzhurskoeaviastroenieigrovoyfokus  } prerequisite = { focus = MAN_metallurgicheskiykombinatsyovaigroyfokus  } prerequisite = { focus = MAN_otdelsocialnyhissledovaniyigrovoyfokus  }
-	}
-
-	#Привлечь японских инвесторов (игровой фокус)
-	focus = {
-		id = MAN_privlechyaponskihinvestorovigrovoyfokus
-		icon = GFX_goal_unknown
+		id = MAN_invite_japanese_investor
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane }
+		mutually_exclusive = { focus = MAN_voprospromyshlennost }
 		x = 24
 		y = 1
+
 		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+
+		ai_will_do = {
+			factor = 4
 		}
-		prerequisite = { focus = MAN_sozyvsovetaporesheniyuvnutrennihproblemvstrane  }
-		mutually_exclusive = { focus = MAN_voprospromyshlennost  }
+
+		available = {
+			NOT = { has_war_with = JAP }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = MAN_songgotu_zhanshan
+			random_core_state = {
+				prioritize = { 328 }
+				limit = {
+					is_fully_controlled_by = ROOT
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 
-	#Пятилетний план (игровой фокус)
 	focus = {
-		id = MAN_pyatiletniyplanigrovoyfokus
-		icon = GFX_goal_unknown
+		id = MAN_first_five_year_pla
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = MAN_invite_japanese_investor }
 		x = 24
 		y = 2
+
 		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+
+		ai_will_do = {
+			factor = 1
 		}
-		prerequisite = { focus = MAN_privlechyaponskihinvestorovigrovoyfokus  }
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			country_event = wtt_manchukou.11
+		}
 	}
 
-	#Следующий пятилетний план (игровой фокус)
 	focus = {
-		id = MAN_sleduyushchiypyatiletniyplanigrovoyfokus
-		icon = GFX_goal_unknown
-		x = 24
-		y = 5
+		id = MAN_invite_japanese_settlers
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = MAN_first_five_year_pla }
+		x = 22
+		y = 3
+
 		cost = 10
-		search_filters = {
-			FOCUS_FILTER_POLITICAL
+
+		ai_will_do = {
+			factor = 1
 		}
-		prerequisite = { focus = MAN_sleduyushchiypyatiletniyplanigrovoyfokus  }
+
+		available = {
+			NOT = { has_idea = MAN_banditry }
+			NOT = { has_war_with = JAP }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		complete_tooltip = {
+			every_state = {
+				limit = { has_state_flag = MAN_invite_japanese_settlers_2IC }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_fully_controlled_by = ROOT }
+				add_manpower = 25417
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = MAN_invite_japanese_settlers_2IC
+			}
+			random_owned_state = {
+				limit = { is_fully_controlled_by = ROOT }
+				add_manpower = 33846
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = MAN_invite_japanese_settlers_2IC
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_expand_the_railway
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = MAN_invite_japanese_settlers }
+		x = 22
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			OR = {
+				716 = {
+					is_fully_controlled_by = ROOT
+				}
+				328 = {
+					is_fully_controlled_by = ROOT
+				} 
+				610 = {
+					is_fully_controlled_by = ROOT
+				} 
+				717 = {
+					is_fully_controlled_by = ROOT
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = {
+					limit = {
+						controls_state = 716
+					}
+					build_railway = { #Mukden-Korean border
+						path = {
+							11771 9885 3895 3839 3970 6981
+						}
+					}
+					build_railway = { #Mukden - Dalian
+						path = {
+							11771 987 9781 11764 964 3783
+						}
+					}
+				}
+			if = {
+				limit = { 
+					328 = { is_fully_controlled_by = ROOT } 
+					controls_state = 715
+					controls_state = 716
+				}
+				build_railway = {
+					path = { #Mukden - Hsinking - Harbin
+						11771 11808 916 4642 4572 4503 7652 10433
+					}
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 716
+					controls_state = 610
+				}
+				build_railway = { #Mukden - Chinese border
+					path = { 11771 6951 11815 9835 6837 11886 3900 }
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 714
+					controls_state = 715
+				}
+				build_railway = { #Mukden - central Manchuria
+					path = { 11771 846 9831 930 4633 4561 4506 7582 10433 }
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			random_owned_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+						include_locked = yes
+					}
+				}
+
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+ 
+	focus = {
+		id = MAN_develop_aluminum_sources
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = MAN_invite_japanese_settlers }
+		x = 20
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			if = {
+				limit = { has_tech = excavation1 }
+				add_tech_bonus = {
+					name = MAN_develop_aluminum_sources
+					bonus = 1.0
+					uses = 1
+					category = excavation_tech
+				}
+			}
+			else = {
+				set_technology = { excavation1 = 1 }
+			}
+			unlock_decision_tooltip = MAN_develop_kirin_aluminium_deposits
+		}
+	}
+
+	focus = {
+		id = MAN_expand_showa_steel_works
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = MAN_develop_aluminum_sources }
+		x = 20
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			716 = { is_fully_controlled_by = ROOT }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			716 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			unlock_decision_tooltip = MAN_develop_liaotung_iron_ore_deposits
+		}
+	}
+
+	focus = {
+		id = MAN_social_research_unit
+		icon = GFX_focus_research
+		prerequisite = { focus = MAN_expand_the_railway }
+		x = 22
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 8
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = MAN_mukden_arsenal
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = MAN_first_five_year_pla }
+		x = 24
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			716 = { is_fully_controlled_by = ROOT }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			716 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_mam
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = MAN_mukden_arsenal }
+		x = 24
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = MAN_mamc_light
+			show_ideas_tooltip = MAN_mamc_medium
+			show_ideas_tooltip = MAN_mamc_heavy
+		}
+	}
+
+	focus = {
+		id = MAN_collective_farms
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = MAN_first_five_year_pla }
+		x = 26
+		y = 3
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_trade_delegatio
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = MAN_collective_farms }
+		x = 26
+		y = 4
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		completion_reward = {
+			add_tech_bonus = {
+				name = MAN_trade_delegation
+				bonus = 1.0
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_expand_the_textile_industry
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = MAN_trade_delegatio }
+		x = 25
+		y = 5
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		complete_tooltip = {
+			random_state = {
+				limit = {
+					has_state_flag = MAN_expand_the_textile_industry_IC
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = MAN_expand_the_textile_industry_IC
+			}
+		}
+	}
+
+	focus = {
+		id = MAN_second_five_year_plan
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = MAN_social_research_unit }
+		prerequisite = { focus = MAN_expand_showa_steel_works }
+		prerequisite = { focus = MAN_expand_the_textile_industry }
+		x = 24
+		y = 6
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 4
+		}
+
+		available = {
+			if = {
+				limit = { has_idea = MAN_five_year_plan_air }
+				NOT = { has_idea = MAN_five_year_plan_air }
+			}
+			if = {
+				limit = { has_idea = MAN_five_year_plan_tank }
+				NOT = { has_idea = MAN_five_year_plan_tank }
+			}
+			if = {
+				limit = { has_idea = MAN_five_year_plan_industry }
+				NOT = { has_idea = MAN_five_year_plan_industry }
+			}
+			if = {
+				limit = {
+					NOT = { has_idea = MAN_five_year_plan_air }
+					NOT = { has_idea = MAN_five_year_plan_tank }
+					NOT = { has_idea = MAN_five_year_plan_industry }
+				}
+				NOT = { has_idea = MAN_five_year_plan_air }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			country_event = wtt_manchukou.11
+		}
+	}
+
+	focus = {
+		id = MAN_national_defense_state
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = MAN_second_five_year_plan }
+		x = 24
+		y = 7
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = yes
+
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_ideas = MAN_national_defense_state
+		}
 	}
 
 }

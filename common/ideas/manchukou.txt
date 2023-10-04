@@ -93,6 +93,144 @@ ideas = {
 			}
 		}
 
+		MAN_kwantung_army_2 = {
+
+			name = MAN_kwantung_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				army_core_attack_factor = -0.1
+				army_core_defence_factor = -0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.01
+			}
+		}
+
+		MAN_kwantung_army_3 = {
+
+			name = MAN_kwantung_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				experience_gain_army_factor = 0.05
+				army_core_attack_factor = -0.075
+				army_core_defence_factor = -0.075
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.01
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = PRC
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = XSM
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = YUN
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+		}
+
+		MAN_kwantung_army_4 = {
+
+			name = MAN_kwantung_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				experience_gain_army_factor = 0.15
+				army_core_attack_factor = -0.075
+				army_core_defence_factor = -0.075
+				army_attack_factor = 0.075
+				army_defence_factor = 0.075
+				army_org_factor = 0.06
+				army_morale_factor = 0.05
+			}
+
+			targeted_modifier = {
+				tag = SOV
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = SHX
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = CHI
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = PRC
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = XSM
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = YUN
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+			targeted_modifier = {
+				tag = GXC
+				attack_bonus_against = 0.05
+				breakthrough_bonus_against = 0.05
+			}
+		}
+
 		MAN_a_scattered_army = {
 
 			name = MAN_a_scattered_army
@@ -107,9 +245,175 @@ ideas = {
 			
 			modifier = {
 				experience_gain_army_factor = -0.25
-				conscription_factor = -0.1
+				conscription_factor = -0.2
 				army_morale_factor = -0.15
 				army_org_factor = -0.15
+			}
+		}
+
+		MAN_a_scattered_army_2 = {
+
+			name = MAN_a_scattered_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				experience_gain_army_factor = -0.15
+				conscription_factor = -0.1
+				army_morale_factor = -0.1
+				army_org_factor = -0.1
+			}
+		}
+
+		MAN_imperial_army = {
+
+			name = MAN_imperial_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				
+			}
+		}
+
+		MAN_imperial_army_2 = {
+
+			name = MAN_imperial_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.1
+				stability_factor = 0.1
+				war_support_factor = -0.05
+			}
+		}
+
+		MAN_imperial_army_3 = {
+
+			name = MAN_imperial_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				supply_node_range = 0.05
+				special_forces_cap = 0.15
+                army_defence_factor = 0.05
+				army_attack_factor = 0.025
+
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.1
+				stability_factor = 0.15
+			}
+		}
+
+		MAN_manchurian_army = {
+
+			name = MAN_manchurian_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				communism_acceptance = 10
+				democratic_acceptance = 10
+				neutrality_acceptance = 10
+			}
+		}
+
+		MAN_manchurian_army_2 = {
+
+			name = MAN_manchurian_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				army_morale_factor = 0.025
+				mobilization_speed = 0.05
+				communism_acceptance = 10
+				democratic_acceptance = 10
+				neutrality_acceptance = 10
+			}
+		}
+
+		MAN_manchurian_army_3 = {
+
+			name = MAN_manchurian_army
+
+			allowed = {
+				always = no
+			}
+			
+			removal_cost = -1
+
+			picture = generic_secret_police
+			
+			modifier = {
+				training_time_factor = 0.35
+				heat_attrition_factor = -0.025
+				winter_attrition_factor = -0.025
+				acclimatization_cold_climate_gain_factor = 0.05
+				acclimatization_hot_climate_gain_factor = 0.05
+				terrain_penalty_reduction = 0.05
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				army_org_factor = 0.05
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				army_morale_factor = 0.025
+				mobilization_speed = 0.05
+				communism_acceptance = 10
+				democratic_acceptance = 10
+				neutrality_acceptance = 10
 			}
 		}
 

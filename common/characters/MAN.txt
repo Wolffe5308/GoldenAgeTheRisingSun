@@ -18,6 +18,15 @@ characters={
 			expire="1960.1.1.1"
 			id=-1
 		}
+		navy_leader = {
+			traits = { career_officer gentlemanly}
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=3
+			visible = { has_completed_focus = MAN_imperskievooruzhyonnyesily }
+		}
 	}
 	MAN_zhang_haipeng={
 		name=MAN_zhang_haipeng
@@ -67,11 +76,11 @@ characters={
 				prime_minister
 			}
 		}
-		corps_commander={
+		field_marshal={
 			traits={ infantry_officer }
-			skill=2
+			skill=3
 			attack_skill=2
-			defense_skill=1
+			defense_skill=3
 			planning_skill=2
 			logistics_skill=2
 			legacy_id=-1
@@ -98,9 +107,9 @@ characters={
 	    }
 		corps_commander={
 			traits={ infantry_officer inflexible_strategist }
-			skill=2
-			attack_skill=1
-			defense_skill=1
+			skill=3
+			attack_skill=2
+			defense_skill=2
 			planning_skill=2
 			logistics_skill=2
 			legacy_id=-1
