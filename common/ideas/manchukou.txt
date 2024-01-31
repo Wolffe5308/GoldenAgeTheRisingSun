@@ -1,6 +1,176 @@
 ideas = {
 	
 	country = {
+		MAN_increase_investment_from_japan_1 = {
+
+        allowed = {
+				original_tag = MAN
+				always = no
+		}
+
+	    allowed_civil_war = {
+				always = yes
+		}
+
+		removal_cost = -1
+
+		picture = generic_fortify_the_borders
+
+	    cancel = {
+	        JAP = {
+				has_war_with = MAN
+			}
+		}
+
+		modifier = {
+		    production_speed_dockyard_factor = 0.05
+		    production_speed_arms_factory_factor = 0.05
+		    production_speed_industrial_complex_factor = 0.05
+		    production_speed_infrastructure_factor = 0.025
+		    production_speed_rail_way_factor = 0.025
+		    production_speed_supply_node_factor = 0.025
+		    industrial_capacity_dockyard = 0.05
+		    min_export = 0.1
+            fascism_drift = 0.05
+		}
+
+	}
+	MAN_increase_investment_from_japan_2 = {
+
+        allowed = {
+				original_tag = MAN
+				always = no
+		}
+
+	    allowed_civil_war = {
+				always = yes
+		}
+
+		removal_cost = -1
+
+		picture = generic_fortify_the_borders
+
+	    cancel = {
+	        JAP = {
+				has_war_with = MAN
+			}
+		}
+
+		modifier = {
+		    production_speed_dockyard_factor = 0.1
+		    production_speed_arms_factory_factor = 0.075
+		    production_speed_industrial_complex_factor = 0.075
+		    production_speed_infrastructure_factor = 0.05
+		    production_speed_rail_way_factor = 0.05
+		    production_speed_supply_node_factor = 0.05
+		    industrial_capacity_dockyard = 0.075
+		    min_export = 0.15
+            fascism_drift = 0.075
+		}
+
+	}
+	MAN_increase_investment_from_japan_3 = {
+
+        allowed = {
+				original_tag = MAN
+				always = no
+		}
+
+	    allowed_civil_war = {
+				always = yes
+		}
+
+		removal_cost = -1
+
+		picture = generic_fortify_the_borders
+
+	    cancel = {
+	        JAP = {
+				has_war_with = MAN
+			}
+		}
+
+		modifier = {
+		    production_speed_dockyard_factor = 0.125
+		    production_speed_arms_factory_factor = 0.1
+		    production_speed_industrial_complex_factor = 0.075
+		    production_speed_infrastructure_factor = 0.05
+		    production_speed_rail_way_factor = 0.075
+		    production_speed_supply_node_factor = 0.075
+		    industrial_capacity_dockyard = 0.1
+		    min_export = 0.2
+            fascism_drift = 0.1
+		}
+
+	}
+	MAN_increase_investment_from_japan_4 = {
+
+        allowed = {
+				original_tag = MAN
+				always = no
+		}
+
+	    allowed_civil_war = {
+				always = yes
+		}
+
+		removal_cost = -1
+
+		picture = generic_fortify_the_borders
+
+	    cancel = {
+	        JAP = {
+				has_war_with = MAN
+			}
+		}
+
+		modifier = {
+		    production_speed_dockyard_factor = 0.15
+		    production_speed_arms_factory_factor = 0.1
+		    production_speed_industrial_complex_factor = 0.1
+		    production_speed_infrastructure_factor = 0.075
+		    production_speed_rail_way_factor = 0.075
+		    production_speed_supply_node_factor = 0.075
+		    industrial_capacity_dockyard = 0.125
+		    min_export = 0.3
+            fascism_drift = 0.15
+		}
+
+	}
+	MAN_increase_investment_from_japan_5 = {
+
+        allowed = {
+				original_tag = MAN
+				always = no
+		}
+
+	    allowed_civil_war = {
+				always = yes
+		}
+
+		removal_cost = -1
+
+		picture = generic_fortify_the_borders
+
+	    cancel = {
+	        JAP = {
+				has_war_with = MAN
+			}
+		}
+
+		modifier = {
+		    production_speed_dockyard_factor = 0.15
+		    production_speed_arms_factory_factor = 0.15
+		    production_speed_industrial_complex_factor = 0.1
+		    production_speed_infrastructure_factor = 0.1
+		    production_speed_rail_way_factor = 0.1
+		    production_speed_supply_node_factor = 0.1
+		    industrial_capacity_dockyard = 0.15
+		    min_export = 0.5
+            fascism_drift = 0.25
+		}
+
+	}
 		MAN_exiled_imperial_family = {
 
 			allowed = {
@@ -1176,6 +1346,4 @@ ideas = {
 			}
 		}
 	}
-
-
 }
