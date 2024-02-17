@@ -10,5 +10,5 @@ tags={
 	"Map"
 }
 name="Golden Age: The Rising Sun"
-supported_version="1.13.1"
+supported_version="1.13.7"
 remote_file_id="3048853471"
