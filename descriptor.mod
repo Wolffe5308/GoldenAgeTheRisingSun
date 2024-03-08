@@ -1,4 +1,4 @@
-version="1.13.1"
+version="1.14.1"
 tags={
 	"National Focuses"
 	"Gameplay"
@@ -10,5 +10,5 @@ tags={
 	"Map"
 }
 name="Golden Age: The Rising Sun"
-supported_version="1.13.7"
+supported_version="1.14.1"
 remote_file_id="3048853471"
